@@ -1045,3 +1045,133 @@ a {
     }
 
 }
+
+/* =========================
+   PÁGINA DOS GTS
+========================= */
+
+.gt-full-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 45px;
+    padding: 55px 0;
+    border-top: 1px solid var(--border);
+}
+
+.gt-full-card:first-of-type {
+    border-top: 3px solid var(--green);
+}
+
+.gt-full-number {
+    color: var(--green);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.gt-full-content > span {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.gt-full-content h2 {
+    margin-top: 8px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+}
+
+.gt-full-content > p {
+    max-width: 750px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.gt-full-content h3 {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.gt-full-content ul {
+    max-width: 750px;
+    margin-top: 12px;
+    padding-left: 20px;
+    color: var(--muted);
+}
+
+.gt-full-content li {
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   PROCESSO DOS GTS
+========================= */
+
+.gt-process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gt-process-item {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 30px;
+    min-height: 230px;
+}
+
+.gt-process-item strong {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.gt-process-item h3 {
+    margin-top: 30px;
+    font-size: 21px;
+}
+
+.gt-process-item p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+
+    .gt-full-card {
+        grid-template-columns: 70px 1fr;
+        gap: 20px;
+        padding: 40px 0;
+    }
+
+    .gt-full-number {
+        font-size: 30px;
+    }
+
+    .gt-process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .gt-full-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gt-process {
+        grid-template-columns: 1fr;
+    }
+
+}
