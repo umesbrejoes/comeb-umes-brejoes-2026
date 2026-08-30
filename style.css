@@ -1175,3 +1175,254 @@ a {
     }
 
 }
+
+/* =========================
+   DOCUMENTOS
+========================= */
+
+.document-notice {
+    background: #edf7f0;
+    border-bottom: 1px solid #cfe4d5;
+}
+
+.document-notice-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px 0;
+}
+
+.document-notice-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    font-weight: 900;
+}
+
+.document-notice strong {
+    font-size: 15px;
+}
+
+.document-notice p {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   CARDS DE DOCUMENTOS
+========================= */
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.document-card {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 28px;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.document-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--green);
+}
+
+.document-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.document-number {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.document-type {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border: 1px solid var(--border);
+    padding: 5px 8px;
+}
+
+.document-icon {
+    width: 48px;
+    height: 55px;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--green);
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.document-card h3 {
+    margin-top: 22px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.document-card p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.document-button {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+/* =========================
+   DOCUMENTOS INSTITUCIONAIS
+========================= */
+
+.institutional-documents {
+    border-top: 2px solid var(--green);
+}
+
+.institutional-document {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.institutional-document > div {
+    flex: 1;
+}
+
+.institutional-document span {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.institutional-document h3 {
+    margin-top: 7px;
+    font-size: 20px;
+}
+
+.institutional-document p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.institutional-document a {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   PUBLICAÇÃO
+========================= */
+
+.publication-box {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 50px;
+    align-items: center;
+    background: var(--green-dark);
+    color: white;
+    padding: 55px;
+}
+
+.publication-box h2 {
+    max-width: 700px;
+    margin-top: 12px;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.1;
+}
+
+.publication-box p {
+    max-width: 700px;
+    margin-top: 18px;
+    color: #c5d2c9;
+}
+
+.publication-mark {
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(255,255,255,.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.publication-mark small {
+    margin-top: 5px;
+    color: #65d786;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 850px) {
+
+    .documents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .publication-box {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .document-notice-content {
+        align-items: flex-start;
+    }
+
+    .institutional-document {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .publication-box {
+        padding: 35px 25px;
+    }
+
+}
