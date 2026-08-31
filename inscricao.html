@@ -21,9 +21,14 @@
 <body>
 
 
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
 <header class="header">
 
     <div class="container header-content">
+
 
         <a href="index.html" class="brand">
 
@@ -97,6 +102,10 @@
 <main>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="page-hero">
 
     <div class="container">
@@ -123,12 +132,20 @@
 
 
 
+<!-- =========================
+     FORMULÁRIO
+========================= -->
+
 <section class="section">
 
     <div class="container">
 
         <div class="registration-layout">
 
+
+            <!-- =========================
+                 INFORMAÇÕES
+            ========================= -->
 
             <aside class="registration-info">
 
@@ -199,7 +216,7 @@
 
                         Preencha as informações com atenção.
                         Os dados serão encaminhados para o
-                        sistema de inscrições do COMEB.
+                        sistema oficial de inscrições do COMEB.
 
                     </p>
 
@@ -209,7 +226,12 @@
 
 
 
+            <!-- =========================
+                 FORMULÁRIO
+            ========================= -->
+
             <div class="registration-form-box">
+
 
                 <div class="form-header">
 
@@ -222,14 +244,17 @@
                     </h2>
 
                     <p>
-                        Preencha todos os campos obrigatórios.
+                        Os campos marcados com * são obrigatórios.
                     </p>
 
                 </div>
 
 
+
                 <form id="inscricaoForm">
 
+
+                    <!-- NOME -->
 
                     <div class="form-group">
 
@@ -249,6 +274,8 @@
 
 
 
+                    <!-- EMAIL -->
+
                     <div class="form-group">
 
                         <label for="email">
@@ -267,6 +294,8 @@
 
 
 
+                    <!-- TELEFONE -->
+
                     <div class="form-group">
 
                         <label for="telefone">
@@ -283,6 +312,8 @@
                     </div>
 
 
+
+                    <!-- INSTITUIÇÃO -->
 
                     <div class="form-group">
 
@@ -301,15 +332,108 @@
 
 
 
+                    <!-- MUNICÍPIO -->
+
                     <div class="form-group">
 
-                        <label for="tipo">
-                            Tipo de participação *
+                        <label for="municipio">
+                            Município *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="municipio"
+                            name="municipio"
+                            value="Brejões"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- SÉRIE / CURSO -->
+
+                    <div class="form-group">
+
+                        <label for="serie">
+                            Série / Curso
+                        </label>
+
+                        <input
+                            type="text"
+                            id="serie"
+                            name="serie"
+                            placeholder="Ex.: 2º ano, História, etc.">
+
+                    </div>
+
+
+
+                    <!-- POSSUI GRÊMIO -->
+
+                    <div class="form-group">
+
+                        <label for="possui_gremio">
+                            Sua escola possui Grêmio Estudantil? *
                         </label>
 
                         <select
-                            id="tipo"
-                            name="tipo"
+                            id="possui_gremio"
+                            name="possui_gremio"
+                            required>
+
+                            <option value="">
+                                Selecione uma opção
+                            </option>
+
+                            <option value="Sim">
+                                Sim
+                            </option>
+
+                            <option value="Não">
+                                Não
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- GRÊMIO -->
+
+                    <div class="form-group">
+
+                        <label for="gremio">
+                            Nome do Grêmio
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremio"
+                            name="gremio"
+                            placeholder="Nome do Grêmio Estudantil">
+
+                        <small>
+                            Se sua escola possui Grêmio, informe
+                            o nome da entidade.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- CONDIÇÃO -->
+
+                    <div class="form-group">
+
+                        <label for="condicao">
+                            Condição de participação *
+                        </label>
+
+                        <select
+                            id="condicao"
+                            name="condicao"
                             required>
 
                             <option value="">
@@ -338,51 +462,44 @@
 
 
 
-                    <div class="form-group">
-
-                        <label for="gremio">
-                            Nome do Grêmio
-                        </label>
-
-                        <input
-                            type="text"
-                            id="gremio"
-                            name="gremio"
-                            placeholder="Se possuir Grêmio Estudantil">
-
-                        <small>
-                            Se você representa um Grêmio,
-                            informe o nome da entidade.
-                        </small>
-
-                    </div>
-
-
+                    <!-- GT -->
 
                     <div class="form-group">
 
-                        <label for="representacao">
-                            Representação
+                        <label for="gt">
+                            Grupo de Trabalho de interesse
                         </label>
 
                         <select
-                            id="representacao"
-                            name="representacao">
+                            id="gt"
+                            name="gt">
 
                             <option value="">
-                                Selecione uma opção
+                                Ainda não definido
                             </option>
 
-                            <option value="Representante com direito a voz e voto">
-                                Representante com direito a voz e voto
+                            <option value="GT 1 — Educação e qualidade do ensino">
+                                GT 1 — Educação e qualidade do ensino
                             </option>
 
-                            <option value="Participante">
-                                Participante
+                            <option value="GT 2 — Assistência e permanência estudantil">
+                                GT 2 — Assistência e permanência estudantil
                             </option>
 
-                            <option value="Convidado">
-                                Convidado
+                            <option value="GT 3 — Grêmios Estudantis e organização de base">
+                                GT 3 — Grêmios Estudantis e organização de base
+                            </option>
+
+                            <option value="GT 4 — Cultura, esporte e lazer">
+                                GT 4 — Cultura, esporte e lazer
+                            </option>
+
+                            <option value="GT 5 — Juventude, direitos e cidadania">
+                                GT 5 — Juventude, direitos e cidadania
+                            </option>
+
+                            <option value="GT 6 — Universidade, formação profissional e futuro">
+                                GT 6 — Universidade, formação profissional e futuro
                             </option>
 
                         </select>
@@ -391,21 +508,25 @@
 
 
 
+                    <!-- OBSERVAÇÕES -->
+
                     <div class="form-group">
 
-                        <label for="observacao">
+                        <label for="observacoes">
                             Observações
                         </label>
 
                         <textarea
-                            id="observacao"
-                            name="observacao"
+                            id="observacoes"
+                            name="observacoes"
                             rows="5"
-                            placeholder="Alguma informação para a organização?"></textarea>
+                            placeholder="Alguma informação que a organização deve saber?"></textarea>
 
                     </div>
 
 
+
+                    <!-- CONFIRMAÇÃO -->
 
                     <div class="form-check">
 
@@ -416,17 +537,18 @@
 
                         <label for="confirmacao">
 
-                            Declaro que as informações
-                            preenchidas são verdadeiras e
-                            estou ciente de que os dados serão
-                            utilizados para a organização
-                            do COMEB 2026. *
+                            Declaro que as informações preenchidas
+                            são verdadeiras e estou ciente de que
+                            os dados serão utilizados para a
+                            organização do COMEB 2026. *
 
                         </label>
 
                     </div>
 
 
+
+                    <!-- BOTÃO -->
 
                     <button
                         type="submit"
@@ -438,9 +560,14 @@
                     </button>
 
 
+
+                    <!-- MENSAGEM -->
+
                     <div
                         id="formMessage"
-                        class="form-message">
+                        class="form-message"
+                        role="alert">
+
                     </div>
 
 
@@ -456,9 +583,14 @@
 
 
 
+<!-- =========================
+     ETAPAS
+========================= -->
+
 <section class="section section-gray">
 
     <div class="container">
+
 
         <div class="section-header">
 
@@ -555,6 +687,10 @@
 
 
 
+<!-- =========================
+     CHAMADA FINAL
+========================= -->
+
 <section class="contact">
 
     <div class="container contact-content">
@@ -586,6 +722,10 @@
 </main>
 
 
+
+<!-- =========================
+     RODAPÉ
+========================= -->
 
 <footer class="footer">
 
@@ -688,8 +828,17 @@
 
 
 
+<!-- =========================
+     SCRIPT GERAL
+========================= -->
+
 <script src="script.js"></script>
 
+
+
+<!-- =========================
+     ENVIO DO FORMULÁRIO
+========================= -->
 
 <script>
 
@@ -709,144 +858,254 @@ const botao =
 document.getElementById("submitButton");
 
 
-formulario.addEventListener("submit", async function(event) {
 
-    event.preventDefault();
+formulario.addEventListener(
+    "submit",
+    async function(event) {
 
-
-    botao.disabled = true;
-
-    botao.textContent = "Enviando...";
+        event.preventDefault();
 
 
-    mensagem.className = "form-message";
+        /*
+         * Desabilita o botão durante o envio
+         */
 
-    mensagem.innerHTML = "";
+        botao.disabled = true;
 
-
-    const dados = {
-
-        nome:
-        document.getElementById("nome").value.trim(),
-
-        email:
-        document.getElementById("email").value.trim(),
-
-        telefone:
-        document.getElementById("telefone").value.trim(),
-
-        escola:
-        document.getElementById("escola").value.trim(),
-
-        tipo:
-        document.getElementById("tipo").value,
-
-        gremio:
-        document.getElementById("gremio").value.trim(),
-
-        representacao:
-        document.getElementById("representacao").value,
-
-        observacao:
-        document.getElementById("observacao").value.trim()
-
-    };
+        botao.textContent = "Enviando...";
 
 
-    try {
+        mensagem.className =
+            "form-message";
+
+        mensagem.innerHTML = "";
 
 
-        const resposta = await fetch(API_URL, {
 
-            method: "POST",
+        /*
+         * Dados enviados para o Apps Script
+         *
+         * Os nomes abaixo correspondem
+         * exatamente aos campos esperados
+         * pelo Code.gs.
+         */
 
-            headers: {
+        const dados = {
 
-                "Content-Type":
-                "text/plain;charset=utf-8"
+            action: "register",
 
-            },
+            nome:
+                document
+                .getElementById("nome")
+                .value
+                .trim(),
 
-            body: JSON.stringify(dados)
+            email:
+                document
+                .getElementById("email")
+                .value
+                .trim(),
 
-        });
+            telefone:
+                document
+                .getElementById("telefone")
+                .value
+                .trim(),
+
+            instituicao:
+                document
+                .getElementById("escola")
+                .value
+                .trim(),
+
+            serie:
+                document
+                .getElementById("serie")
+                .value
+                .trim(),
+
+            municipio:
+                document
+                .getElementById("municipio")
+                .value
+                .trim(),
+
+            possui_gremio:
+                document
+                .getElementById("possui_gremio")
+                .value,
+
+            gremio:
+                document
+                .getElementById("gremio")
+                .value
+                .trim(),
+
+            condicao:
+                document
+                .getElementById("condicao")
+                .value,
+gt:
+                document
+                .getElementById("gt")
+                .value,
+
+            observacoes:
+                document
+                .getElementById("observacoes")
+                .value
+                .trim()
+
+        };
 
 
-        const resultado =
-        await resposta.json();
+
+        /*
+         * Envio para o Google Apps Script
+         */
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API_URL,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                            "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify(dados)
+                    }
+                );
 
 
-        if (resultado.ok) {
+            /*
+             * Converte a resposta
+             * para JSON.
+             */
+
+            const resultado =
+                await resposta.json();
+
+
+
+            /*
+             * SUCESSO
+             */
+
+            if (resultado.ok) {
+
+
+                mensagem.className =
+                    "form-message success";
+
+
+                mensagem.innerHTML = `
+
+                    <strong>
+                        Inscrição enviada com sucesso!
+                    </strong>
+
+                    <p>
+                        Seu cadastro foi registrado
+                        pela organização do COMEB 2026.
+                    </p>
+
+                    <p>
+                        <strong>
+                            Número da inscrição:
+                            ${resultado.id || "Registrado"}
+                        </strong>
+                    </p>
+
+                `;
+
+
+                formulario.reset();
+
+
+                /*
+                 * Mantém Brejões como município
+                 */
+
+                document
+                    .getElementById("municipio")
+                    .value = "Brejões";
+
+
+            }
+
+            /*
+             * ERRO RETORNADO PELA API
+             */
+
+            else {
+
+                throw new Error(
+                    resultado.error ||
+                    "A API não conseguiu registrar a inscrição."
+                );
+
+            }
+
+
+        }
+
+        /*
+         * ERRO DE COMUNICAÇÃO
+         */
+
+        catch (erro) {
+
+            console.error(
+                "Erro no envio:",
+                erro
+            );
 
 
             mensagem.className =
-            "form-message success";
+                "form-message error";
 
 
             mensagem.innerHTML = `
 
                 <strong>
-                    Inscrição enviada com sucesso!
+                    Não foi possível enviar a inscrição.
                 </strong>
 
                 <p>
-                    Seus dados foram registrados.
-                    Guarde esta informação para
-                    acompanhar seu credenciamento.
+                    O sistema não conseguiu concluir
+                    a comunicação com o servidor.
+                </p>
+
+                <p>
+                    Tente novamente em alguns instantes.
                 </p>
 
             `;
 
-
-            formulario.reset();
-
-
-        } else {
-
-
-            throw new Error(
-                resultado.message ||
-                "Não foi possível registrar a inscrição."
-            );
-
         }
 
 
-    } catch (erro) {
+        /*
+         * Reativa o botão
+         */
 
+        finally {
 
-        console.error(erro);
+            botao.disabled = false;
 
+            botao.textContent =
+                "Enviar inscrição";
 
-        mensagem.className =
-        "form-message error";
-
-
-        mensagem.innerHTML = `
-
-            <strong>
-                Não foi possível enviar.
-            </strong>
-
-            <p>
-                Verifique sua conexão e tente novamente.
-            </p>
-
-        `;
-
-
-    } finally {
-
-
-        botao.disabled = false;
-
-        botao.textContent =
-        "Enviar inscrição";
-
+        }
 
     }
-
-});
+);
 
 </script>
 
