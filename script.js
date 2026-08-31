@@ -1,15 +1,37 @@
+// ================================
+// MENU MOBILE
+// ================================
+
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 
-menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
+if (menuToggle && nav) {
 
+    menuToggle.addEventListener("click", function () {
 
-document.querySelectorAll(".nav a").forEach(link => {
+        nav.classList.toggle("active");
 
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
     });
 
-});
+}
+
+
+// ================================
+// FECHAR MENU AO CLICAR EM LINK
+// ================================
+
+if (nav) {
+
+    const links = nav.querySelectorAll("a");
+
+    links.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            nav.classList.remove("active");
+
+        });
+
+    });
+
+}
