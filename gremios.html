@@ -29,7 +29,6 @@
 
     <div class="container header-content">
 
-
         <a href="index.html" class="brand">
 
             <div class="brand-symbol">
@@ -83,8 +82,7 @@
                 Documentos
             </a>
 
-            <a href="gremios.html"
-               class="active">
+            <a href="gremios.html" class="active">
                 Grêmios
             </a>
 
@@ -142,7 +140,6 @@
     <div class="container">
 
         <div class="two-column">
-
 
             <div>
 
@@ -206,7 +203,6 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <span class="section-tag">
@@ -226,7 +222,6 @@
             </p>
 
         </div>
-
 
 
         <div class="cards-grid">
@@ -254,7 +249,6 @@
             </article>
 
 
-
             <article class="info-card">
 
                 <div class="card-number">
@@ -277,7 +271,6 @@
             </article>
 
 
-
             <article class="info-card">
 
                 <div class="card-number">
@@ -297,7 +290,6 @@
                 </p>
 
             </article>
-
 
 
             <article class="info-card">
@@ -338,7 +330,6 @@
     <div class="container">
 
         <div class="highlight-box">
-
 
             <div>
 
@@ -408,7 +399,6 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <span class="section-tag">
@@ -427,7 +417,6 @@
             </p>
 
         </div>
-
 
 
         <div class="steps-grid">
@@ -454,7 +443,6 @@
             </div>
 
 
-
             <div class="step-card">
 
                 <strong>
@@ -476,7 +464,6 @@
             </div>
 
 
-
             <div class="step-card">
 
                 <strong>
@@ -496,7 +483,6 @@
                 </p>
 
             </div>
-
 
 
             <div class="step-card">
@@ -549,9 +535,9 @@
 
             <p>
 
-                Esta área será atualizada pela
-                organização do COMEB com as
-                entidades participantes.
+                Confira as entidades estudantis
+                cadastradas para participar do
+                COMEB.
 
             </p>
 
@@ -559,43 +545,34 @@
 
 
 
+        <!--
+            A lista abaixo será preenchida
+            automaticamente pela API.
+        -->
+
         <div
             class="gremios-list"
             id="gremiosList">
 
-
-            <!--
-
-                FUTURA INTEGRAÇÃO
-
-                Os Grêmios serão carregados
-                automaticamente do sistema.
-
-            -->
-
-
             <div class="empty-state">
 
                 <div class="empty-state-icon">
-                    +
+                    ...
                 </div>
 
                 <h3>
-                    Lista em atualização
+                    Carregando Grêmios...
                 </h3>
 
                 <p>
-
-                    Os Grêmios participantes serão
-                    adicionados pela organização
-                    do COMEB.
-
+                    Aguarde enquanto buscamos
+                    os dados.
                 </p>
 
             </div>
 
-
         </div>
+
 
     </div>
 
@@ -610,7 +587,6 @@
 <section class="contact">
 
     <div class="container contact-content">
-
 
         <div>
 
@@ -641,7 +617,6 @@
             </a>
 
         </div>
-
 
     </div>
 
@@ -757,7 +732,303 @@
 
 
 
+<!-- =========================
+     SCRIPT GERAL
+========================= -->
+
 <script src="script.js"></script>
+
+
+
+<!-- =========================
+     CARREGAR GRÊMIOS
+========================= -->
+
+<script>
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
+
+
+const gremiosList =
+document.getElementById("gremiosList");
+
+
+async function carregarGremios() {
+
+    try {
+
+        const resposta =
+            await fetch(
+                API_URL + "?action=gremios"
+            );
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                "Erro HTTP " +
+                resposta.status
+            );
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (
+            !dados.ok
+        ) {
+
+            throw new Error(
+                dados.error ||
+                "A API retornou um erro."
+            );
+
+        }
+
+
+        const gremios =
+            dados.gremios || [];
+
+
+        /*
+         * Nenhum Grêmio cadastrado
+         */
+
+        if (
+            gremios.length === 0
+        ) {
+
+            gremiosList.innerHTML = `
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Nenhum Grêmio cadastrado
+                    </h3>
+
+                    <p>
+
+                        Os Grêmios participantes
+                        serão adicionados pela
+                        organização do COMEB.
+
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /*
+         * Criar os cards
+         */
+
+        gremiosList.innerHTML =
+            gremios
+                .map(function(gremio) {
+
+                    return `
+
+                        <article class="gremio-card">
+
+                            <div class="gremio-card-top">
+
+                                <span class="gremio-status">
+                                    Ativo
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                ${escaparHTML(gremio.nome)}
+                            </h3>
+
+
+                            <p class="gremio-school">
+
+                                <strong>
+                                    Escola:
+                                </strong>
+
+                                ${escaparHTML(gremio.escola)}
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>
+                                    Município:
+                                </strong>
+
+                                ${escaparHTML(gremio.municipio)}
+
+                            </p>
+
+
+                            ${
+                                gremio.presidente
+                                ? `
+
+                                    <p>
+
+                                        <strong>
+                                            Presidência:
+                                        </strong>
+
+                                        ${escaparHTML(gremio.presidente)}
+
+                                    </p>
+
+                                  `
+                                : ""
+                            }
+
+
+                            ${
+                                gremio.instagram &&
+                                gremio.instagram !== "-"
+                                ? `
+
+                                    <a
+                                        class="gremio-instagram"
+                                        href="${linkInstagram(gremio.instagram)}"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+
+                                        Instagram →
+
+                                    </a>
+
+                                  `
+                                : ""
+                            }
+
+                        </article>
+
+                    `;
+
+                })
+                .join("");
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar Grêmios:",
+            erro
+        );
+
+
+        gremiosList.innerHTML = `
+
+            <div class="empty-state">
+
+                <div class="empty-state-icon">
+                    !
+                </div>
+
+                <h3>
+                    Não foi possível carregar os Grêmios
+                </h3>
+
+                <p>
+
+                    O sistema não conseguiu
+                    consultar a lista neste momento.
+
+                </p>
+
+                <button
+                    type="button"
+                    class="button"
+                    onclick="carregarGremios()">
+
+                    Tentar novamente
+
+                </button>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   PROTEÇÃO CONTRA HTML INJETADO
+   ===================================================== */
+
+function escaparHTML(texto) {
+
+    return String(
+        texto || ""
+    )
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   LINK DO INSTAGRAM
+   ===================================================== */
+
+function linkInstagram(instagram) {
+
+    const valor =
+        String(
+            instagram || ""
+        ).trim();
+
+
+    if (
+        valor.startsWith("http://") ||
+        valor.startsWith("https://")
+    ) {
+
+        return valor;
+
+    }
+
+
+    const usuario =
+        valor
+            .replace("@", "")
+            .replace(/\s/g, "");
+
+
+    return "https://instagram.com/" +
+           encodeURIComponent(usuario);
+
+}
+
+
+/* =====================================================
+   INICIAR
+   ===================================================== */
+
+carregarGremios();
+
+</script>
 
 
 </body>
