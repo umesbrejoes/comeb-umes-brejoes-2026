@@ -121,8 +121,7 @@
 
             Gestão das inscrições,
             credenciamento e organização
-            do Conselho Municipal de
-            Entidades de Base.
+            dos Grêmios Estudantis.
 
         </p>
 
@@ -206,7 +205,7 @@
 
 
 <!-- =====================================================
-     PAINEL ADMINISTRATIVO
+     PAINEL
 ===================================================== -->
 
 <section
@@ -218,7 +217,7 @@
 
 
         <!-- =================================================
-             CABEÇALHO DO PAINEL
+             CABEÇALHO
         ================================================= -->
 
         <div class="admin-panel-header">
@@ -235,8 +234,9 @@
 
                 <p>
 
-                    Acompanhe as inscrições e
-                    o credenciamento dos participantes.
+                    Acompanhe inscrições,
+                    credenciamento e entidades
+                    estudantis.
 
                 </p>
 
@@ -373,9 +373,7 @@
 
 
 
-            <!-- =================================================
-                 BUSCA
-            ================================================= -->
+            <!-- FILTROS -->
 
             <div class="admin-filters">
 
@@ -469,10 +467,6 @@
 
 
 
-            <!-- =================================================
-                 RESULTADOS
-            ================================================= -->
-
             <div class="admin-results-info">
 
                 <span id="resultsCount">
@@ -480,7 +474,6 @@
                 </span>
 
             </div>
-
 
 
             <div
@@ -491,9 +484,7 @@
 
 
 
-            <!-- =================================================
-                 TABELA
-            ================================================= -->
+            <!-- TABELA -->
 
             <div class="admin-table-wrapper">
 
@@ -503,61 +494,33 @@
 
                         <tr>
 
-                            <th>
-                                ID
-                            </th>
+                            <th>ID</th>
 
-                            <th>
-                                Data/Hora
-                            </th>
+                            <th>Data/Hora</th>
 
-                            <th>
-                                Nome
-                            </th>
+                            <th>Nome</th>
 
-                            <th>
-                                E-mail
-                            </th>
+                            <th>E-mail</th>
 
-                            <th>
-                                WhatsApp
-                            </th>
+                            <th>WhatsApp</th>
 
-                            <th>
-                                Instituição
-                            </th>
+                            <th>Instituição</th>
 
-                            <th>
-                                Série/Curso
-                            </th>
+                            <th>Série/Curso</th>
 
-                            <th>
-                                Município
-                            </th>
+                            <th>Município</th>
 
-                            <th>
-                                Grêmio
-                            </th>
+                            <th>Grêmio</th>
 
-                            <th>
-                                Condição
-                            </th>
+                            <th>Condição</th>
 
-                            <th>
-                                GT
-                            </th>
+                            <th>GT</th>
 
-                            <th>
-                                Status
-                            </th>
+                            <th>Status</th>
 
-                            <th>
-                                Credenciado
-                            </th>
+                            <th>Credenciado</th>
 
-                            <th>
-                                Ação
-                            </th>
+                            <th>Ação</th>
 
                         </tr>
 
@@ -609,15 +572,289 @@
 
                     <p>
 
-                        Entidades estudantis
-                        cadastradas no sistema.
+                        Cadastre, consulte e gerencie
+                        os Grêmios Estudantis.
 
                     </p>
 
                 </div>
 
+
+                <button
+                    type="button"
+                    class="button"
+                    id="novoGremioButton">
+
+                    + Novo Grêmio
+
+                </button>
+
             </div>
 
+
+
+            <!-- =================================================
+                 FORMULÁRIO DE GRÊMIO
+            ================================================= -->
+
+            <div
+                id="gremioFormBox"
+                class="registration-form-box"
+                style="display:none;">
+
+
+                <div class="form-header">
+
+                    <span class="section-tag">
+                        GESTÃO DE GRÊMIO
+                    </span>
+
+                    <h2 id="gremioFormTitle">
+                        Cadastrar Grêmio
+                    </h2>
+
+                    <p>
+                        Preencha os dados da entidade estudantil.
+                    </p>
+
+                </div>
+
+
+                <form id="gremioForm">
+
+
+                    <input
+                        type="hidden"
+                        id="gremioId">
+
+
+                    <!-- NOME -->
+
+                    <div class="form-group">
+
+                        <label for="gremioNome">
+                            Nome do Grêmio *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremioNome"
+                            placeholder="Ex.: Grêmio Estudantil Paulo Freire"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- ESCOLA -->
+
+                    <div class="form-group">
+
+                        <label for="gremioEscola">
+                            Escola / Instituição *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremioEscola"
+                            placeholder="Nome da escola"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- MUNICÍPIO -->
+
+                    <div class="form-group">
+
+                        <label for="gremioMunicipio">
+                            Município *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremioMunicipio"
+                            value="Brejões"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- PRESIDENTE -->
+
+                    <div class="form-group">
+
+                        <label for="gremioPresidente">
+                            Presidente / Representante
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremioPresidente"
+                            placeholder="Nome do presidente ou representante">
+
+                    </div>
+
+
+
+                    <!-- INSTAGRAM -->
+
+                    <div class="form-group">
+
+                        <label for="gremioInstagram">
+                            Instagram
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gremioInstagram"
+                            placeholder="@gremioestudantil">
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="gremioStatus">
+                            Status
+                        </label>
+
+                        <select id="gremioStatus">
+
+                            <option value="Ativo">
+                                Ativo
+                            </option>
+
+                            <option value="Inativo">
+                                Inativo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- OBSERVAÇÕES -->
+
+                    <div class="form-group">
+
+                        <label for="gremioObservacoes">
+                            Observações
+                        </label>
+
+                        <textarea
+                            id="gremioObservacoes"
+                            rows="4"
+                            placeholder="Informações adicionais sobre o Grêmio"></textarea>
+
+                    </div>
+
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="admin-form-actions">
+
+                        <button
+                            type="submit"
+                            class="button"
+                            id="gremioSaveButton">
+
+                            Salvar Grêmio
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="gremioCancelButton">
+
+                            Cancelar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="gremioFormMessage"
+                        class="form-message">
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BUSCA DE GRÊMIOS
+            ================================================= -->
+
+            <div class="admin-filters">
+
+                <div class="form-group">
+
+                    <label for="gremioSearch">
+                        Buscar Grêmio
+                    </label>
+
+                    <input
+                        type="search"
+                        id="gremioSearch"
+                        placeholder="Nome, escola ou município">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="gremioStatusFilter">
+                        Status
+                    </label>
+
+                    <select id="gremioStatusFilter">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="Ativo">
+                            Ativos
+                        </option>
+
+                        <option value="Inativo">
+                            Inativos
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="gremiosMessage"
+                class="form-message">
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LISTA
+            ================================================= -->
 
             <div
                 id="adminGremios"
@@ -638,7 +875,7 @@
 
 
         <!-- =================================================
-             INFORMAÇÕES DE SEGURANÇA
+             SEGURANÇA
         ================================================= -->
 
         <div class="admin-security">
@@ -731,7 +968,7 @@
 
             <a href="gremios.html">
                 Grêmios
-            </a>
+                            </a>
 
             <a href="inscricao.html">
                 Inscrição
@@ -751,7 +988,6 @@
             </a>
 
         </div>
-
 
     </div>
 
@@ -790,11 +1026,6 @@
 
 <script>
 
-
-/* =====================================================
-   CONFIGURAÇÃO
-===================================================== */
-
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
 
@@ -827,29 +1058,125 @@ document.getElementById("logoutButton");
 const refreshButton =
 document.getElementById("refreshButton");
 
+const refreshGremiosButton =
+document.getElementById(
+    "refreshGremiosButton"
+);
+
 const inscricoesBody =
-document.getElementById("inscricoesBody");
+document.getElementById(
+    "inscricoesBody"
+);
 
 const adminMessage =
-document.getElementById("adminMessage");
+document.getElementById(
+    "adminMessage"
+);
 
 const adminGremios =
-document.getElementById("adminGremios");
+document.getElementById(
+    "adminGremios"
+);
+
+const gremioMessage =
+document.getElementById(
+    "gremioMessage"
+);
 
 const searchInput =
-document.getElementById("searchInput");
+document.getElementById(
+    "searchInput"
+);
 
 const statusFilter =
-document.getElementById("statusFilter");
+document.getElementById(
+    "statusFilter"
+);
 
 const credenciadoFilter =
-document.getElementById("credenciadoFilter");
+document.getElementById(
+    "credenciadoFilter"
+);
 
 const gtFilter =
-document.getElementById("gtFilter");
+document.getElementById(
+    "gtFilter"
+);
 
 const resultsCount =
-document.getElementById("resultsCount");
+document.getElementById(
+    "resultsCount"
+);
+
+
+/* =====================================================
+   ELEMENTOS DO MODAL
+===================================================== */
+
+const gremioModal =
+document.getElementById(
+    "gremioModal"
+);
+
+const gremioModalTitle =
+document.getElementById(
+    "gremioModalTitle"
+);
+
+const gremioForm =
+document.getElementById(
+    "gremioForm"
+);
+
+const gremioId =
+document.getElementById(
+    "gremioId"
+);
+
+const gremioNome =
+document.getElementById(
+    "gremioNome"
+);
+
+const gremioEscola =
+document.getElementById(
+    "gremioEscola"
+);
+
+const gremioMunicipio =
+document.getElementById(
+    "gremioMunicipio"
+);
+
+const gremioPresidente =
+document.getElementById(
+    "gremioPresidente"
+);
+
+const gremioInstagram =
+document.getElementById(
+    "gremioInstagram"
+);
+
+const gremioStatus =
+document.getElementById(
+    "gremioStatus"
+);
+
+const gremioObservacoes =
+document.getElementById(
+    "gremioObservacoes"
+);
+
+const gremioFormMessage =
+document.getElementById(
+    "gremioFormMessage"
+);
+
+const saveGremioButton =
+document.getElementById(
+    "saveGremioButton"
+);
 
 
 /* =====================================================
@@ -861,8 +1188,9 @@ sessionStorage.getItem(
     "COMEB_ADMIN_TOKEN"
 );
 
-let inscricoes =
-[];
+let inscricoes = [];
+
+let gremios = [];
 
 
 /* =====================================================
@@ -886,7 +1214,7 @@ function escaparHTML(texto) {
 
 
 /* =====================================================
-   MOSTRAR LOGIN
+   LOGIN
 ===================================================== */
 
 function mostrarLogin() {
@@ -900,10 +1228,6 @@ function mostrarLogin() {
 }
 
 
-/* =====================================================
-   MOSTRAR PAINEL
-===================================================== */
-
 function mostrarPainel() {
 
     loginSection.style.display =
@@ -916,10 +1240,6 @@ function mostrarPainel() {
 
 }
 
-
-/* =====================================================
-   LOGIN
-===================================================== */
 
 loginForm.addEventListener(
     "submit",
@@ -967,9 +1287,7 @@ loginForm.addEventListener(
                 await resposta.json();
 
 
-            if (
-                !resultado.ok
-            ) {
+            if (!resultado.ok) {
 
                 throw new Error(
                     resultado.error ||
@@ -1019,9 +1337,8 @@ loginForm.addEventListener(
                 </strong>
 
                 <p>
-                    Verifique o token administrativo
-                    e tente novamente.
-                                   </p>
+                    Verifique o token administrativo.
+                </p>
 
             `;
 
@@ -1039,7 +1356,7 @@ loginForm.addEventListener(
 
 
 /* =====================================================
-   LOGOUT
+   SAIR
 ===================================================== */
 
 logoutButton.addEventListener(
@@ -1051,16 +1368,15 @@ logoutButton.addEventListener(
         );
 
 
-        adminToken =
-            "";
+        adminToken = "";
+
+        inscricoes = [];
+
+        gremios = [];
 
 
         adminTokenInput.value =
             "";
-
-
-        inscricoes =
-            [];
 
 
         mostrarLogin();
@@ -1070,7 +1386,7 @@ logoutButton.addEventListener(
 
 
 /* =====================================================
-   CARREGAR DADOS
+   CARREGAR TUDO
 ===================================================== */
 
 async function carregarDados() {
@@ -1109,7 +1425,9 @@ async function carregarEstatisticas() {
             await fetch(
                 API_URL +
                 "?action=adminStats&token=" +
-                encodeURIComponent(adminToken)
+                encodeURIComponent(
+                    adminToken
+                )
             );
 
 
@@ -1169,8 +1487,9 @@ async function carregarEstatisticas() {
 }
 
 
-/* =====================================================
-   CARREGAR INSCRIÇÕES
+/*
+    =====================================================
+   INSCRIÇÕES
 ===================================================== */
 
 async function carregarInscricoes() {
@@ -1198,7 +1517,9 @@ async function carregarInscricoes() {
             await fetch(
                 API_URL +
                 "?action=adminList&token=" +
-                encodeURIComponent(adminToken)
+                encodeURIComponent(
+                    adminToken
+                )
             );
 
 
@@ -1221,7 +1542,6 @@ async function carregarInscricoes() {
 
 
         preencherFiltroGT();
-
 
         aplicarFiltros();
 
@@ -1261,23 +1581,27 @@ async function carregarInscricoes() {
 
 
 /* =====================================================
-   FILTRO DE GT
+   FILTRO GT
 ===================================================== */
 
 function preencherFiltroGT() {
 
     const valores =
         inscricoes
-            .map(
-                function(row) {
-                    return row[11] || "";
-                }
-            )
-            .filter(
-                function(valor) {
-                    return valor.trim() !== "";
-                }
-            );
+        .map(
+            function(row) {
+
+                return row[11] || "";
+
+            }
+        )
+        .filter(
+            function(valor) {
+
+                return valor.trim() !== "";
+
+            }
+        );
 
 
     const unicos =
@@ -1306,6 +1630,7 @@ function preencherFiltroGT() {
             option.value =
                 gt;
 
+
             option.textContent =
                 gt;
 
@@ -1328,8 +1653,8 @@ function aplicarFiltros() {
 
     const busca =
         searchInput.value
-            .trim()
-            .toLowerCase();
+        .trim()
+        .toLowerCase();
 
 
     const status =
@@ -1349,29 +1674,45 @@ function aplicarFiltros() {
             function(row) {
 
                 const id =
-                    String(row[0] || "")
-                    .toLowerCase();
+                    String(
+                        row[0] || ""
+                    ).toLowerCase();
+
 
                 const nome =
-                    String(row[2] || "")
-                    .toLowerCase();
+                    String(
+                        row[2] || ""
+                    ).toLowerCase();
+
 
                 const email =
-                    String(row[3] || "")
-                    .toLowerCase();
+                    String(
+                        row[3] || ""
+                    ).toLowerCase();
+
 
                 const instituicao =
-                    String(row[5] || "")
-                    .toLowerCase();
+                    String(
+                        row[5] || ""
+                    ).toLowerCase();
+
 
                 const statusRow =
-                    String(row[13] || "");
+                    String(
+                        row[13] || ""
+                    );
+
 
                 const credenciadoRow =
-                    String(row[14] || "");
+                    String(
+                        row[14] || ""
+                    );
+
 
                 const gtRow =
-                    String(row[11] || "");
+                    String(
+                        row[11] || ""
+                    );
 
 
                 const correspondeBusca =
@@ -1389,7 +1730,8 @@ function aplicarFiltros() {
 
                 const correspondeCredenciado =
                     !credenciado ||
-                    credenciadoRow === credenciado;
+                    credenciadoRow ===
+                    credenciado;
 
 
                 const correspondeGT =
@@ -1465,7 +1807,7 @@ function renderizarInscricoes(
 
 
 /* =====================================================
-   CRIAR LINHA DA INSCRIÇÃO
+   LINHA DE INSCRIÇÃO
 ===================================================== */
 
 function criarLinhaInscricao(
@@ -1508,9 +1850,6 @@ function criarLinhaInscricao(
     const gt =
         row[11] || "";
 
-    const observacoes =
-        row[12] || "";
-
     const status =
         row[13] || "Pendente";
 
@@ -1523,85 +1862,54 @@ function criarLinhaInscricao(
         <tr>
 
             <td>
-
                 <strong>
                     ${escaparHTML(id)}
                 </strong>
-
             </td>
-
 
             <td>
                 ${escaparHTML(data)}
             </td>
 
-
             <td>
-
                 ${escaparHTML(nome)}
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(email)}
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(telefone)}
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(instituicao)}
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(serie)}
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(municipio)}
-
             </td>
 
-
             <td>
-
                 ${
                     gremio
                     ? escaparHTML(gremio)
                     : escaparHTML(possuiGremio)
                 }
-
             </td>
 
-
             <td>
-
                 ${escaparHTML(condicao)}
-
             </td>
-
 
             <td>
-
                 ${escaparHTML(gt)}
-
             </td>
-
 
             <td>
 
@@ -1611,7 +1919,9 @@ function criarLinhaInscricao(
 
                     <option
                         value="Pendente"
-                        ${status === "Pendente" ? "selected" : ""}>
+                        ${status === "Pendente"
+                            ? "selected"
+                            : ""}>
 
                         Pendente
 
@@ -1619,7 +1929,9 @@ function criarLinhaInscricao(
 
                     <option
                         value="Confirmada"
-                        ${status === "Confirmada" ? "selected" : ""}>
+                        ${status === "Confirmada"
+                            ? "selected"
+                            : ""}>
 
                         Confirmada
 
@@ -1627,7 +1939,9 @@ function criarLinhaInscricao(
 
                     <option
                         value="Cancelada"
-                        ${status === "Cancelada" ? "selected" : ""}>
+                        ${status === "Cancelada"
+                            ? "selected"
+                            : ""}>
 
                         Cancelada
 
@@ -1637,7 +1951,6 @@ function criarLinhaInscricao(
 
             </td>
 
-
             <td>
 
                 <label class="admin-check">
@@ -1646,14 +1959,15 @@ function criarLinhaInscricao(
                         type="checkbox"
                         class="admin-credenciado"
                         data-id="${escaparHTML(id)}"
-                        ${credenciado === "Sim" ? "checked" : ""}>
+                        ${credenciado === "Sim"
+                            ? "checked"
+                            : ""}>
 
                     Sim
 
                 </label>
 
             </td>
-
 
             <td>
 
@@ -1665,6 +1979,7 @@ function criarLinhaInscricao(
                     Salvar
 
                 </button>
+
 
                 <button
                     type="button"
@@ -1795,14 +2110,12 @@ document.addEventListener(
             }
 
 
-            adminMessage.className =
-                "form-message success";
-
-
-            adminMessage.textContent =
+            mostrarMensagemAdmin(
+                "success",
                 "Inscrição " +
                 id +
-                " atualizada com sucesso.";
+                " atualizada com sucesso."
+            );
 
 
             await carregarDados();
@@ -1816,13 +2129,11 @@ document.addEventListener(
             );
 
 
-            adminMessage.className =
-                "form-message error";
-
-
-            adminMessage.textContent =
+            mostrarMensagemAdmin(
+                "error",
                 erro.message ||
-                "Não foi possível salvar.";
+                "Não foi possível salvar."
+            );
 
         }
 
@@ -1838,10 +2149,8 @@ document.addEventListener(
 );
 
 
-/*
-
-    =====================================================
-   DETALHES
+/* =====================================================
+   DETALHES DA INSCRIÇÃO
 ===================================================== */
 
 document.addEventListener(
@@ -1885,35 +2194,37 @@ document.addEventListener(
 
         const detalhes = `
 
-            ID: ${inscricao[0] || "-"}
+ID: ${inscricao[0] || "-"}
 
-            Data/Hora: ${inscricao[1] || "-"}
+Data/Hora: ${inscricao[1] || "-"}
 
-            Nome: ${inscricao[2] || "-"}
+Nome: ${inscricao[2] || "-"}
 
-            E-mail: ${inscricao[3] || "-"}
+E-mail: ${inscricao[3] || "-"}
 
-            WhatsApp: ${inscricao[4] || "-"}
+WhatsApp: ${inscricao[4] || "-"}
 
-            Instituição: ${inscricao[5] || "-"}
+Instituição: ${inscricao[5] || "-"}
 
-            Série/Curso: ${inscricao[6] || "-"}
+Série/Curso: ${inscricao[6] || "-"}
 
-            Município: ${inscricao[7] || "-"}
+Município: ${inscricao[7] || "-"}
 
-            Possui Grêmio: ${inscricao[8] || "-"}
+Possui Grêmio: ${inscricao[8] || "-"}
 
-            Grêmio: ${inscricao[9] || "-"}
+Grêmio: ${inscricao[9] || "-"}
 
-            Condição: ${inscricao[10] || "-"}
+Condição: ${inscricao[10] || "-"}
 
-            GT: ${inscricao[11] || "-"}
+GT: ${inscricao[11] || "-"}
 
-            Observações: ${inscricao[12] || "-"}
+Observações: ${inscricao[12] || "-"}
 
-            Status: ${inscricao[13] || "-"}
+Status: ${inscricao[13] || "-"}
 
-            Credenciado: ${inscricao[14] || "-"}
+Credenciado: ${inscricao[14] || "-"}
+
+Notas: ${inscricao[15] || "-"}
 
         `;
 
@@ -1927,7 +2238,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   FILTROS EM TEMPO REAL
+   FILTROS
 ===================================================== */
 
 searchInput.addEventListener(
@@ -1955,10 +2266,23 @@ gtFilter.addEventListener(
 
 
 /* =====================================================
-   CARREGAR GRÊMIOS
+   GRÊMIOS — LISTAR
 ===================================================== */
 
 async function carregarGremios() {
+
+    adminGremios.innerHTML = `
+
+        <div class="empty-state">
+
+            <h3>
+                Carregando Grêmios...
+            </h3>
+
+        </div>
+
+    `;
+
 
     try {
 
@@ -1983,137 +2307,11 @@ async function carregarGremios() {
         }
 
 
-        const gremios =
+        gremios =
             dados.gremios || [];
 
 
-        if (
-            gremios.length === 0
-        ) {
-
-            adminGremios.innerHTML = `
-
-                <div class="empty-state">
-
-                    <h3>
-                        Nenhum Grêmio cadastrado
-                    </h3>
-
-                    <p>
-                        Ainda não existem Grêmios
-                        ativos no sistema.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        adminGremios.innerHTML =
-            gremios
-            .map(
-                function(gremio) {
-
-                    return `
-
-                        <article class="gremio-card">
-
-                            <span class="gremio-status">
-
-                                ${escaparHTML(
-                                    gremio.status ||
-                                    "Ativo"
-                                )}
-
-                            </span>
-
-
-                            <h3>
-
-                                ${escaparHTML(
-                                    gremio.nome
-                                )}
-
-                            </h3>
-
-
-                            <p>
-
-                                <strong>
-                                    Escola:
-                                </strong>
-
-                                ${escaparHTML(
-                                    gremio.escola
-                                )}
-
-                            </p>
-
-
-                            <p>
-
-                                <strong>
-                                    Município:
-                                </strong>
-
-                                ${escaparHTML(
-                                    gremio.municipio
-                                )}
-
-                            </p>
-
-
-                            <p>
-
-                                <strong>
-                                    Presidência:
-                                </strong>
-
-                                ${escaparHTML(
-                                    gremio.presidente
-                                )}
-
-                            </p>
-
-
-                            ${
-                                gremio.instagram &&
-                                gremio.instagram !== "-"
-                                ?
-
-                                `
-
-                                <p>
-
-                                    <strong>
-                                        Instagram:
-                                    </strong>
-
-                                    ${escaparHTML(
-                                        gremio.instagram
-                                    )}
-
-                                </p>
-
-                                `
-
-                                :
-
-                                ""
-
-                            }
-
-                        </article>
-
-                    `;
-
-                }
-            )
-            .join("");
+        renderizarGremios();
 
 
     } catch (erro) {
@@ -2129,14 +2327,14 @@ async function carregarGremios() {
             <div class="empty-state">
 
                 <h3>
-                    Não foi possível carregar os Grêmios
+                    Erro ao carregar Grêmios
                 </h3>
 
                 <p>
-
-                    Verifique a conexão com
-                    a API e tente novamente.
-
+                    ${escaparHTML(
+                        erro.message ||
+                        "Verifique a API."
+                    )}
                 </p>
 
             </div>
@@ -2148,22 +2346,929 @@ async function carregarGremios() {
 }
 
 
+/*
+    =====================================================
+   RENDERIZAR GRÊMIOS
+===================================================== */
+
+function renderizarGremios() {
+
+    if (
+        gremios.length === 0
+    ) {
+
+        adminGremios.innerHTML = `
+
+            <div class="empty-state">
+
+                <h3>
+                    Nenhum Grêmio cadastrado
+                </h3>
+
+                <p>
+                    Clique em "Novo Grêmio"
+                    para cadastrar a primeira entidade.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    adminGremios.innerHTML =
+        gremios
+        .map(
+            function(gremio) {
+
+                return `
+
+                    <article
+                        class="gremio-card">
+
+                        <span
+                            class="gremio-status">
+
+                            ${escaparHTML(
+                                gremio.status ||
+                                "Ativo"
+                            )}
+
+                        </span>
+
+
+                        <h3>
+
+                            ${escaparHTML(
+                                gremio.nome
+                            )}
+
+                        </h3>
+
+
+                        <p>
+
+                            <strong>
+                                Escola:
+                            </strong>
+
+                            ${escaparHTML(
+                                gremio.escola
+                            )}
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Município:
+                            </strong>
+
+                            ${escaparHTML(
+                                gremio.municipio
+                            )}
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Presidente:
+                            </strong>
+
+                            ${escaparHTML(
+                                gremio.presidente ||
+                                "-"
+                            )}
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Instagram:
+                            </strong>
+
+                            ${escaparHTML(
+                                gremio.instagram ||
+                                "-"
+                            )}
+
+                        </p>
+
+
+                        ${
+                            gremio.observacoes
+                            ?
+
+                            `
+
+                            <p>
+
+                                <strong>
+                                    Observações:
+                                </strong>
+
+                                ${escaparHTML(
+                                    gremio.observacoes
+                                )}
+
+                            </p>
+
+                            `
+
+                            :
+
+                            ""
+
+                        }
+
+
+                        <div
+                            class="gremio-actions">
+
+                            <button
+                                type="button"
+                                class="button gremio-edit"
+                                data-id="${escaparHTML(
+                                    gremio.id
+                                )}">
+
+                                Editar
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="button button-secondary gremio-delete"
+                                data-id="${escaparHTML(
+                                    gremio.id
+                                )}">
+
+                                Excluir
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
 /* =====================================================
-   ATUALIZAR
+   ABRIR MODAL — NOVO
+===================================================== */
+
+document
+.getElementById(
+    "novoGremioButton"
+)
+.addEventListener(
+    "click",
+    function() {
+
+        abrirModalNovoGremio();
+
+    }
+);
+
+
+function abrirModalNovoGremio() {
+
+    gremioForm.reset();
+
+
+    gremioId.value =
+        "";
+
+
+    gremioMunicipio.value =
+        "Brejões";
+
+
+    gremioStatus.value =
+        "Ativo";
+
+
+    gremioModalTitle.textContent =
+        "Cadastrar Grêmio";
+
+
+    saveGremioButton.textContent =
+        "Cadastrar Grêmio";
+
+
+    gremioFormMessage.className =
+        "form-message";
+
+
+    gremioFormMessage.textContent =
+        "";
+
+
+    gremioModal.classList.add(
+        "active"
+    );
+
+
+    gremioNome.focus();
+
+}
+
+
+/* =====================================================
+   ABRIR MODAL — EDITAR
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const botao =
+            event.target.closest(
+                ".gremio-edit"
+            );
+
+
+        if (!botao) {
+
+            return;
+
+        }
+
+
+        const id =
+            botao.dataset.id;
+
+
+        const gremio =
+            gremios.find(
+                function(item) {
+
+                    return String(item.id) ===
+                        String(id);
+
+                }
+            );
+
+
+        if (!gremio) {
+
+            return;
+
+        }
+
+
+        abrirModalEdicao(
+            gremio
+        );
+
+    }
+);
+
+
+function abrirModalEdicao(
+    gremio
+) {
+
+    gremioId.value =
+        gremio.id || "";
+
+
+    gremioNome.value =
+        gremio.nome || "";
+
+
+    gremioEscola.value =
+        gremio.escola || "";
+
+
+    gremioMunicipio.value =
+        gremio.municipio ||
+        "Brejões";
+
+
+    gremioPresidente.value =
+        gremio.presidente === "-"
+        ? ""
+        : (
+            gremio.presidente || ""
+        );
+
+
+    gremioInstagram.value =
+        gremio.instagram === "-"
+        ? ""
+        : (
+            gremio.instagram || ""
+        );
+
+
+    gremioStatus.value =
+        gremio.status ||
+        "Ativo";
+
+
+    gremioObservacoes.value =
+        gremio.observacoes ||
+        "";
+
+
+    gremioModalTitle.textContent =
+        "Editar Grêmio";
+
+
+    saveGremioButton.textContent =
+        "Salvar alterações";
+
+
+    gremioFormMessage.className =
+        "form-message";
+
+
+    gremioFormMessage.textContent =
+        "";
+
+
+    gremioModal.classList.add(
+        "active"
+    );
+
+
+    gremioNome.focus();
+
+}
+
+
+/* =====================================================
+   FECHAR MODAL
+===================================================== */
+
+function fecharModalGremio() {
+
+    gremioModal.classList.remove(
+        "active"
+    );
+
+}
+
+
+document
+.getElementById(
+    "closeGremioModal"
+)
+.addEventListener(
+    "click",
+    fecharModalGremio
+);
+
+
+document
+.getElementById(
+    "cancelGremioButton"
+)
+.addEventListener(
+    "click",
+    fecharModalGremio
+);
+
+
+gremioModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            gremioModal
+        ) {
+
+            fecharModalGremio();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CADASTRAR / EDITAR GRÊMIO
+===================================================== */
+
+gremioForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const id =
+            gremioId.value.trim();
+
+
+        const nome =
+            gremioNome.value.trim();
+
+
+        const escola =
+            gremioEscola.value.trim();
+
+
+        const municipio =
+            gremioMunicipio.value.trim();
+
+
+        const presidente =
+            gremioPresidente.value.trim();
+
+
+        const instagram =
+            gremioInstagram.value.trim();
+
+
+        const status =
+            gremioStatus.value;
+
+
+        const observacoes =
+            gremioObservacoes.value.trim();
+
+
+        if (
+            !nome ||
+            !escola ||
+            !municipio
+        ) {
+
+            gremioFormMessage.className =
+                "form-message error";
+
+
+            gremioFormMessage.textContent =
+                "Preencha os campos obrigatórios.";
+
+
+            return;
+
+        }
+
+
+        const editando =
+            Boolean(id);
+
+
+        const action =
+            editando
+            ? "gremioUpdate"
+            : "gremioCreate";
+
+
+        saveGremioButton.disabled =
+            true;
+
+
+        saveGremioButton.textContent =
+            editando
+            ? "Salvando..."
+            : "Cadastrando...";
+
+
+        gremioFormMessage.className =
+            "form-message";
+
+
+        gremioFormMessage.textContent =
+            "Enviando dados...";
+
+
+        const dados = {
+
+            action:
+                action,
+
+            token:
+                adminToken,
+
+            nome:
+                nome,
+
+            escola:
+                escola,
+
+            municipio:
+                municipio,
+
+            presidente:
+                presidente,
+
+            instagram:
+                instagram,
+
+            status:
+                status,
+
+            observacoes:
+                observacoes
+
+        };
+
+
+        if (editando) {
+
+            dados.id =
+                id;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API_URL,
+                    {
+
+                        method:
+                            "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+
+                        },
+
+                        body:
+                            JSON.stringify(
+                                dados
+                            )
+
+                    }
+                );
+
+
+            const resultado =
+                await resposta.json();
+
+
+            if (!resultado.ok) {
+
+                throw new Error(
+                    resultado.error ||
+                    "Não foi possível salvar o Grêmio."
+                );
+
+            }
+
+
+            gremioFormMessage.className =
+                "form-message success";
+
+
+            gremioFormMessage.innerHTML = `
+
+                <strong>
+                    ${
+                        editando
+                        ? "Grêmio atualizado!"
+                        : "Grêmio cadastrado!"
+                    }
+                </strong>
+
+                <p>
+                    ${
+                        resultado.message ||
+                        "Operação realizada com sucesso."
+                    }
+                </p>
+
+            `;
+
+
+            mostrarMensagemGremio(
+                "success",
+                editando
+                ? "Grêmio atualizado com sucesso."
+                : "Grêmio cadastrado com sucesso."
+            );
+
+
+            await carregarGremios();
+
+
+            setTimeout(
+                function() {
+
+                    fecharModalGremio();
+
+                },
+                700
+            );
+
+
+        } catch (erro) {
+
+            console.error(
+                "Erro no Grêmio:",
+                erro
+            );
+
+
+            gremioFormMessage.className =
+                "form-message error";
+
+
+            gremioFormMessage.innerHTML = `
+
+                <strong>
+                    Não foi possível concluir.
+                </strong>
+
+                <p>
+                    ${escaparHTML(
+                        erro.message ||
+                        "Erro de comunicação."
+                    )}
+                </p>
+
+            `;
+
+        }
+
+
+        saveGremioButton.disabled =
+            false;
+
+
+        saveGremioButton.textContent =
+            editando
+            ? "Salvar alterações"
+            : "Cadastrar Grêmio";
+
+    }
+);
+
+
+/* =====================================================
+   EXCLUIR GRÊMIO
+===================================================== */
+
+document.addEventListener(
+    "click",
+    async function(event) {
+
+        const botao =
+            event.target.closest(
+                ".gremio-delete"
+            );
+
+
+        if (!botao) {
+
+            return;
+
+        }
+
+
+        const id =
+            botao.dataset.id;
+
+
+        const gremio =
+            gremios.find(
+                function(item) {
+
+                    return String(item.id) ===
+                        String(id);
+
+                }
+            );
+
+
+        if (!gremio) {
+
+            return;
+
+        }
+
+
+        const confirmar =
+            confirm(
+                "Tem certeza que deseja excluir o Grêmio \"" +
+                gremio.nome +
+                "\"?"
+            );
+
+
+        if (!confirmar) {
+
+            return;
+
+        }
+
+
+        botao.disabled =
+            true;
+
+
+        botao.textContent =
+            "Excluindo...";
+
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API_URL,
+                    {
+
+                        method:
+                            "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                action:
+                                    "gremioDelete",
+
+                                token:
+                                    adminToken,
+
+                                id:
+                                    id
+
+                            })
+
+                    }
+                );
+
+
+            const resultado =
+                await resposta.json();
+
+
+            if (!resultado.ok) {
+
+                throw new Error(
+                    resultado.error ||
+                    "Não foi possível excluir."
+                );
+
+            }
+
+
+            mostrarMensagemGremio(
+                "success",
+                "Grêmio excluído com sucesso."
+            );
+
+
+            await carregarGremios();
+
+
+        } catch (erro) {
+
+            console.error(
+                "Erro ao excluir:",
+                erro
+            );
+
+
+            mostrarMensagemGremio(
+                "error",
+                erro.message ||
+                "Não foi possível excluir."
+            );
+
+
+            botao.disabled =
+                false;
+
+
+            botao.textContent =
+                "Excluir";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   MENSAGENS
+===================================================== */
+
+function mostrarMensagemAdmin(
+    tipo,
+    texto
+) {
+
+    adminMessage.className =
+        "form-message " +
+        tipo;
+
+
+    adminMessage.textContent =
+        texto;
+
+
+    setTimeout(
+        function() {
+
+            adminMessage.textContent =
+                "";
+
+            adminMessage.className =
+                "form-message";
+
+        },
+        4000
+    );
+
+}
+
+
+function mostrarMensagemGremio(
+    tipo,
+    texto
+) {
+
+    gremioMessage.className =
+        "form-message " +
+        tipo;
+
+
+    gremioMessage.textContent =
+        texto;
+
+
+    setTimeout(
+        function() {
+
+            gremioMessage.textContent =
+                "";
+
+            gremioMessage.className =
+                "form-message";
+
+        },
+        4000
+    );
+
+}
+
+
+/* =====================================================
+   BOTÕES DE ATUALIZAÇÃO
 ===================================================== */
 
 refreshButton.addEventListener(
     "click",
     function() {
 
-        adminMessage.className =
-            "form-message";
-
-        adminMessage.textContent =
-            "Atualizando dados...";
+        mostrarMensagemAdmin(
+            "",
+            "Atualizando dados..."
+        );
 
 
         carregarDados();
+
+    }
+);
+
+
+refreshGremiosButton.addEventListener(
+    "click",
+    function() {
+
+        mostrarMensagemGremio(
+            "",
+            "Atualizando Grêmios..."
+        );
+
+
+        carregarGremios();
 
     }
 );
