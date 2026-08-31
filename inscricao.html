@@ -21,14 +21,9 @@
 <body>
 
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
 <header class="header">
 
     <div class="container header-content">
-
 
         <a href="index.html" class="brand">
 
@@ -102,10 +97,6 @@
 <main>
 
 
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="page-hero">
 
     <div class="container">
@@ -132,19 +123,12 @@
 
 
 
-<!-- =========================
-     INFORMAÇÕES
-========================= -->
-
 <section class="section">
 
     <div class="container">
 
-
         <div class="registration-layout">
 
-
-            <!-- INFORMAÇÕES -->
 
             <aside class="registration-info">
 
@@ -159,9 +143,9 @@
 
                 <p>
 
-                    O cadastro é destinado aos estudantes
-                    e representantes das entidades que
-                    participarão do Conselho.
+                    Preencha seus dados corretamente
+                    para que a organização possa realizar
+                    seu cadastro e credenciamento.
 
                 </p>
 
@@ -213,10 +197,9 @@
 
                     <p>
 
-                        O preenchimento deste formulário
-                        não substitui a apresentação da
-                        documentação necessária para o
-                        credenciamento, quando exigida.
+                        Preencha as informações com atenção.
+                        Os dados serão encaminhados para o
+                        sistema de inscrições do COMEB.
 
                     </p>
 
@@ -225,8 +208,6 @@
             </aside>
 
 
-
-            <!-- FORMULÁRIO -->
 
             <div class="registration-form-box">
 
@@ -241,17 +222,14 @@
                     </h2>
 
                     <p>
-                        Preencha os campos abaixo.
+                        Preencha todos os campos obrigatórios.
                     </p>
 
                 </div>
 
 
-                <form
-                    id="inscricaoForm">
+                <form id="inscricaoForm">
 
-
-                    <!-- NOME -->
 
                     <div class="form-group">
 
@@ -264,13 +242,12 @@
                             id="nome"
                             name="nome"
                             placeholder="Digite seu nome completo"
+                            autocomplete="name"
                             required>
 
                     </div>
 
 
-
-                    <!-- EMAIL -->
 
                     <div class="form-group">
 
@@ -283,13 +260,12 @@
                             id="email"
                             name="email"
                             placeholder="Digite seu e-mail"
+                            autocomplete="email"
                             required>
 
                     </div>
 
 
-
-                    <!-- TELEFONE -->
 
                     <div class="form-group">
 
@@ -301,13 +277,12 @@
                             type="tel"
                             id="telefone"
                             name="telefone"
-                            placeholder="(00) 00000-0000">
+                            placeholder="(00) 00000-0000"
+                            autocomplete="tel">
 
                     </div>
 
 
-
-                    <!-- ESCOLA -->
 
                     <div class="form-group">
 
@@ -325,8 +300,6 @@
                     </div>
 
 
-
-                    <!-- TIPO DE PARTICIPAÇÃO -->
 
                     <div class="form-group">
 
@@ -365,8 +338,6 @@
 
 
 
-                    <!-- GRÊMIO -->
-
                     <div class="form-group">
 
                         <label for="gremio">
@@ -380,15 +351,13 @@
                             placeholder="Se possuir Grêmio Estudantil">
 
                         <small>
-                            Caso sua escola possua Grêmio,
+                            Se você representa um Grêmio,
                             informe o nome da entidade.
                         </small>
 
                     </div>
 
 
-
-                    <!-- REPRESENTANTE -->
 
                     <div class="form-group">
 
@@ -422,8 +391,6 @@
 
 
 
-                    <!-- OBSERVAÇÃO -->
-
                     <div class="form-group">
 
                         <label for="observacao">
@@ -434,13 +401,11 @@
                             id="observacao"
                             name="observacao"
                             rows="5"
-                            placeholder="Alguma informação que a organização deve saber?"></textarea>
+                            placeholder="Alguma informação para a organização?"></textarea>
 
                     </div>
 
 
-
-                    <!-- AUTORIZAÇÃO -->
 
                     <div class="form-check">
 
@@ -452,9 +417,9 @@
                         <label for="confirmacao">
 
                             Declaro que as informações
-                            preenchidas são verdadeiras
-                            e estou ciente de que o cadastro
-                            será utilizado para organização
+                            preenchidas são verdadeiras e
+                            estou ciente de que os dados serão
+                            utilizados para a organização
                             do COMEB 2026. *
 
                         </label>
@@ -463,18 +428,15 @@
 
 
 
-                    <!-- BOTÃO -->
-
                     <button
                         type="submit"
-                        class="button form-submit">
+                        class="button form-submit"
+                        id="submitButton">
 
                         Enviar inscrição
 
                     </button>
 
-
-                    <!-- MENSAGEM -->
 
                     <div
                         id="formMessage"
@@ -494,14 +456,9 @@
 
 
 
-<!-- =========================
-     COMO FUNCIONA
-========================= -->
-
 <section class="section section-gray">
 
     <div class="container">
-
 
         <div class="section-header">
 
@@ -530,8 +487,7 @@
                 </h3>
 
                 <p>
-                    Você envia seus dados
-                    para a organização.
+                    Você envia seus dados pelo formulário.
                 </p>
 
             </div>
@@ -544,12 +500,12 @@
                 </strong>
 
                 <h3>
-                    Conferência
+                    Registro
                 </h3>
 
                 <p>
-                    A organização verifica
-                    as informações cadastradas.
+                    Os dados são encaminhados ao
+                    sistema de inscrições.
                 </p>
 
             </div>
@@ -562,12 +518,12 @@
                 </strong>
 
                 <h3>
-                    Credenciamento
+                    Conferência
                 </h3>
 
                 <p>
-                    No evento será realizado
-                    o credenciamento dos participantes.
+                    A organização verifica as
+                    informações cadastradas.
                 </p>
 
             </div>
@@ -584,8 +540,8 @@
                 </h3>
 
                 <p>
-                    Participe dos debates,
-                    GTs e deliberações.
+                    Participe dos debates, GTs
+                    e deliberações.
                 </p>
 
             </div>
@@ -598,10 +554,6 @@
 </section>
 
 
-
-<!-- =========================
-     CHAMADA
-========================= -->
 
 <section class="contact">
 
@@ -635,12 +587,7 @@
 
 
 
-<!-- =========================
-     RODAPÉ
-========================= -->
-
 <footer class="footer">
-
 
     <div class="container footer-main">
 
@@ -737,42 +684,167 @@
 
     </div>
 
-
 </footer>
+
 
 
 <script src="script.js"></script>
 
 
-<!-- =========================
-     SCRIPT DO FORMULÁRIO
-========================= -->
-
 <script>
 
-const formulario = document.getElementById("inscricaoForm");
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
 
-const mensagem = document.getElementById("formMessage");
+
+const formulario =
+document.getElementById("inscricaoForm");
 
 
-formulario.addEventListener("submit", function(event) {
+const mensagem =
+document.getElementById("formMessage");
+
+
+const botao =
+document.getElementById("submitButton");
+
+
+formulario.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
 
-    mensagem.className = "form-message success";
+    botao.disabled = true;
 
-    mensagem.innerHTML = `
-        <strong>Inscrição registrada!</strong>
-        <p>
-            Seus dados foram preenchidos corretamente.
-            A integração com o sistema de inscrições
-            será ativada na próxima etapa.
-        </p>
-    `;
+    botao.textContent = "Enviando...";
 
 
-    formulario.reset();
+    mensagem.className = "form-message";
+
+    mensagem.innerHTML = "";
+
+
+    const dados = {
+
+        nome:
+        document.getElementById("nome").value.trim(),
+
+        email:
+        document.getElementById("email").value.trim(),
+
+        telefone:
+        document.getElementById("telefone").value.trim(),
+
+        escola:
+        document.getElementById("escola").value.trim(),
+
+        tipo:
+        document.getElementById("tipo").value,
+
+        gremio:
+        document.getElementById("gremio").value.trim(),
+
+        representacao:
+        document.getElementById("representacao").value,
+
+        observacao:
+        document.getElementById("observacao").value.trim()
+
+    };
+
+
+    try {
+
+
+        const resposta = await fetch(API_URL, {
+
+            method: "POST",
+
+            headers: {
+
+                "Content-Type":
+                "text/plain;charset=utf-8"
+
+            },
+
+            body: JSON.stringify(dados)
+
+        });
+
+
+        const resultado =
+        await resposta.json();
+
+
+        if (resultado.ok) {
+
+
+            mensagem.className =
+            "form-message success";
+
+
+            mensagem.innerHTML = `
+
+                <strong>
+                    Inscrição enviada com sucesso!
+                </strong>
+
+                <p>
+                    Seus dados foram registrados.
+                    Guarde esta informação para
+                    acompanhar seu credenciamento.
+                </p>
+
+            `;
+
+
+            formulario.reset();
+
+
+        } else {
+
+
+            throw new Error(
+                resultado.message ||
+                "Não foi possível registrar a inscrição."
+            );
+
+        }
+
+
+    } catch (erro) {
+
+
+        console.error(erro);
+
+
+        mensagem.className =
+        "form-message error";
+
+
+        mensagem.innerHTML = `
+
+            <strong>
+                Não foi possível enviar.
+            </strong>
+
+            <p>
+                Verifique sua conexão e tente novamente.
+            </p>
+
+        `;
+
+
+    } finally {
+
+
+        botao.disabled = false;
+
+        botao.textContent =
+        "Enviar inscrição";
+
+
+    }
 
 });
 
