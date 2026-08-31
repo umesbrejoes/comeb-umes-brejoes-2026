@@ -102,7 +102,7 @@
 
 
 <!-- =====================================================
-     CABEÇALHO DO PAINEL
+     HERO
 ===================================================== -->
 
 <section class="page-hero">
@@ -119,8 +119,10 @@
 
         <p>
 
-            Área de organização e acompanhamento
-            do Conselho Municipal de Entidades de Base.
+            Gestão das inscrições,
+            credenciamento e organização
+            do Conselho Municipal de
+            Entidades de Base.
 
         </p>
 
@@ -131,7 +133,7 @@
 
 
 <!-- =====================================================
-     AUTENTICAÇÃO
+     LOGIN
 ===================================================== -->
 
 <section
@@ -140,7 +142,7 @@
 
     <div class="container">
 
-        <div class="admin-login">
+        <div class="registration-form-box admin-login">
 
             <span class="section-tag">
                 ACESSO RESTRITO
@@ -153,7 +155,7 @@
             <p>
 
                 Informe o token administrativo
-                fornecido pela organização do COMEB.
+                para acessar o painel do COMEB.
 
             </p>
 
@@ -163,13 +165,13 @@
                 <div class="form-group">
 
                     <label for="adminToken">
-                        Token administrativo
+                        Token administrativo *
                     </label>
 
                     <input
                         type="password"
                         id="adminToken"
-                        placeholder="Digite o token"
+                        placeholder="Digite o token administrativo"
                         autocomplete="off"
                         required>
 
@@ -178,7 +180,8 @@
 
                 <button
                     type="submit"
-                    class="button">
+                    class="button"
+                    id="loginButton">
 
                     Entrar no painel
 
@@ -203,7 +206,7 @@
 
 
 <!-- =====================================================
-     PAINEL
+     PAINEL ADMINISTRATIVO
 ===================================================== -->
 
 <section
@@ -215,7 +218,7 @@
 
 
         <!-- =================================================
-             TOPO DO PAINEL
+             CABEÇALHO DO PAINEL
         ================================================= -->
 
         <div class="admin-panel-header">
@@ -231,8 +234,10 @@
                 </h2>
 
                 <p>
-                    Acompanhe as inscrições e o
-                    credenciamento dos participantes.
+
+                    Acompanhe as inscrições e
+                    o credenciamento dos participantes.
+
                 </p>
 
             </div>
@@ -345,6 +350,13 @@
                         Inscrições
                     </h2>
 
+                    <p>
+
+                        Consulte, filtre e atualize
+                        os participantes cadastrados.
+
+                    </p>
+
                 </div>
 
 
@@ -361,6 +373,116 @@
 
 
 
+            <!-- =================================================
+                 BUSCA
+            ================================================= -->
+
+            <div class="admin-filters">
+
+
+                <div class="form-group">
+
+                    <label for="searchInput">
+                        Buscar
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Nome, ID, e-mail ou instituição">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="Pendente">
+                            Pendentes
+                        </option>
+
+                        <option value="Confirmada">
+                            Confirmadas
+                        </option>
+
+                        <option value="Cancelada">
+                            Canceladas
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="credenciadoFilter">
+                        Credenciamento
+                    </label>
+
+                    <select id="credenciadoFilter">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="Sim">
+                            Credenciados
+                        </option>
+
+                        <option value="Não">
+                            Não credenciados
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="gtFilter">
+                        Grupo de Trabalho
+                    </label>
+
+                    <select id="gtFilter">
+
+                        <option value="">
+                            Todos os GTs
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RESULTADOS
+            ================================================= -->
+
+            <div class="admin-results-info">
+
+                <span id="resultsCount">
+                    Carregando inscrições...
+                </span>
+
+            </div>
+
+
+
             <div
                 id="adminMessage"
                 class="form-message">
@@ -368,6 +490,10 @@
             </div>
 
 
+
+            <!-- =================================================
+                 TABELA
+            ================================================= -->
 
             <div class="admin-table-wrapper">
 
@@ -394,7 +520,15 @@
                             </th>
 
                             <th>
+                                WhatsApp
+                            </th>
+
+                            <th>
                                 Instituição
+                            </th>
+
+                            <th>
+                                Série/Curso
                             </th>
 
                             <th>
@@ -435,7 +569,7 @@
                         <tr>
 
                             <td
-                                colspan="12"
+                                colspan="14"
                                 class="admin-loading">
 
                                 Faça login para carregar
@@ -473,6 +607,13 @@
                         Grêmios cadastrados
                     </h2>
 
+                    <p>
+
+                        Entidades estudantis
+                        cadastradas no sistema.
+
+                    </p>
+
                 </div>
 
             </div>
@@ -492,7 +633,33 @@
 
             </div>
 
-                  </div>
+        </div>
+
+
+
+        <!-- =================================================
+             INFORMAÇÕES DE SEGURANÇA
+        ================================================= -->
+
+        <div class="admin-security">
+
+            <span class="section-tag">
+                SEGURANÇA
+            </span>
+
+            <h3>
+                Área administrativa
+            </h3>
+
+            <p>
+
+                Mantenha o token administrativo
+                em segurança e não o compartilhe
+                publicamente.
+
+            </p>
+
+        </div>
 
 
     </div>
@@ -651,6 +818,9 @@ document.getElementById("loginMessage");
 const adminTokenInput =
 document.getElementById("adminToken");
 
+const loginButton =
+document.getElementById("loginButton");
+
 const logoutButton =
 document.getElementById("logoutButton");
 
@@ -666,6 +836,21 @@ document.getElementById("adminMessage");
 const adminGremios =
 document.getElementById("adminGremios");
 
+const searchInput =
+document.getElementById("searchInput");
+
+const statusFilter =
+document.getElementById("statusFilter");
+
+const credenciadoFilter =
+document.getElementById("credenciadoFilter");
+
+const gtFilter =
+document.getElementById("gtFilter");
+
+const resultsCount =
+document.getElementById("resultsCount");
+
 
 /* =====================================================
    ESTADO
@@ -676,6 +861,9 @@ sessionStorage.getItem(
     "COMEB_ADMIN_TOKEN"
 );
 
+let inscricoes =
+[];
+
 
 /* =====================================================
    ESCAPAR HTML
@@ -684,13 +872,30 @@ sessionStorage.getItem(
 function escaparHTML(texto) {
 
     return String(
-        texto || ""
+        texto == null
+            ? ""
+            : texto
     )
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   MOSTRAR LOGIN
+===================================================== */
+
+function mostrarLogin() {
+
+    loginSection.style.display =
+        "block";
+
+    adminPanel.style.display =
+        "none";
 
 }
 
@@ -708,21 +913,6 @@ function mostrarPainel() {
         "block";
 
     carregarDados();
-
-}
-
-
-/* =====================================================
-   MOSTRAR LOGIN
-===================================================== */
-
-function mostrarLogin() {
-
-    loginSection.style.display =
-        "block";
-
-    adminPanel.style.display =
-        "none";
 
 }
 
@@ -749,10 +939,17 @@ loginForm.addEventListener(
         }
 
 
+        loginButton.disabled =
+            true;
+
+        loginButton.textContent =
+            "Verificando...";
+
+
         loginMessage.className =
             "form-message";
 
-        loginMessage.innerHTML =
+        loginMessage.textContent =
             "Verificando acesso...";
 
 
@@ -796,7 +993,7 @@ loginForm.addEventListener(
                 "form-message success";
 
 
-            loginMessage.innerHTML =
+            loginMessage.textContent =
                 "Acesso autorizado.";
 
 
@@ -805,7 +1002,10 @@ loginForm.addEventListener(
 
         } catch (erro) {
 
-            console.error(erro);
+            console.error(
+                "Erro no login:",
+                erro
+            );
 
 
             loginMessage.className =
@@ -815,25 +1015,31 @@ loginForm.addEventListener(
             loginMessage.innerHTML = `
 
                 <strong>
-                    Não foi possível entrar.
+                    Acesso não autorizado.
                 </strong>
 
                 <p>
-                    Verifique o token administrativo.
-                </p>
+                    Verifique o token administrativo
+                    e tente novamente.
+                                   </p>
 
             `;
 
         }
 
+
+        loginButton.disabled =
+            false;
+
+        loginButton.textContent =
+            "Entrar no painel";
+
     }
 );
 
 
-/*
-
-  =====================================================
-   SAIR
+/* =====================================================
+   LOGOUT
 ===================================================== */
 
 logoutButton.addEventListener(
@@ -845,11 +1051,16 @@ logoutButton.addEventListener(
         );
 
 
-        adminToken = "";
+        adminToken =
+            "";
 
 
         adminTokenInput.value =
             "";
+
+
+        inscricoes =
+            [];
 
 
         mostrarLogin();
@@ -909,7 +1120,8 @@ async function carregarEstatisticas() {
         if (!dados.ok) {
 
             throw new Error(
-                dados.error
+                dados.error ||
+                "Erro nas estatísticas."
             );
 
         }
@@ -958,7 +1170,7 @@ async function carregarEstatisticas() {
 
 
 /* =====================================================
-   INSCRIÇÕES
+   CARREGAR INSCRIÇÕES
 ===================================================== */
 
 async function carregarInscricoes() {
@@ -968,7 +1180,7 @@ async function carregarInscricoes() {
         <tr>
 
             <td
-                colspan="12"
+                colspan="14"
                 class="admin-loading">
 
                 Carregando inscrições...
@@ -997,53 +1209,21 @@ async function carregarInscricoes() {
         if (!dados.ok) {
 
             throw new Error(
-                dados.error
+                dados.error ||
+                "Não foi possível carregar."
             );
 
         }
 
 
-        const rows =
+        inscricoes =
             dados.rows || [];
 
 
-        if (
-            rows.length === 0
-        ) {
-
-            inscricoesBody.innerHTML = `
-
-                <tr>
-
-                    <td
-                        colspan="12"
-                        class="admin-loading">
-
-                        Nenhuma inscrição encontrada.
-
-                    </td>
-
-                </tr>
-
-            `;
-
-            return;
-
-        }
+        preencherFiltroGT();
 
 
-        inscricoesBody.innerHTML =
-            rows
-            .map(
-                function(row) {
-
-                    return criarLinhaInscricao(
-                        row
-                    );
-
-                }
-            )
-            .join("");
+        aplicarFiltros();
 
 
     } catch (erro) {
@@ -1059,7 +1239,7 @@ async function carregarInscricoes() {
             <tr>
 
                 <td
-                    colspan="12"
+                    colspan="14"
                     class="admin-loading">
 
                     Não foi possível carregar
@@ -1071,16 +1251,226 @@ async function carregarInscricoes() {
 
         `;
 
+
+        resultsCount.textContent =
+            "Erro ao carregar inscrições.";
+
     }
 
 }
 
 
 /* =====================================================
-   CRIAR LINHA
+   FILTRO DE GT
 ===================================================== */
 
-function criarLinhaInscricao(row) {
+function preencherFiltroGT() {
+
+    const valores =
+        inscricoes
+            .map(
+                function(row) {
+                    return row[11] || "";
+                }
+            )
+            .filter(
+                function(valor) {
+                    return valor.trim() !== "";
+                }
+            );
+
+
+    const unicos =
+        [...new Set(valores)]
+        .sort();
+
+
+    gtFilter.innerHTML = `
+
+        <option value="">
+            Todos os GTs
+        </option>
+
+    `;
+
+
+    unicos.forEach(
+        function(gt) {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                gt;
+
+            option.textContent =
+                gt;
+
+
+            gtFilter.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   APLICAR FILTROS
+===================================================== */
+
+function aplicarFiltros() {
+
+    const busca =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+    const status =
+        statusFilter.value;
+
+
+    const credenciado =
+        credenciadoFilter.value;
+
+
+    const gt =
+        gtFilter.value;
+
+
+    const filtradas =
+        inscricoes.filter(
+            function(row) {
+
+                const id =
+                    String(row[0] || "")
+                    .toLowerCase();
+
+                const nome =
+                    String(row[2] || "")
+                    .toLowerCase();
+
+                const email =
+                    String(row[3] || "")
+                    .toLowerCase();
+
+                const instituicao =
+                    String(row[5] || "")
+                    .toLowerCase();
+
+                const statusRow =
+                    String(row[13] || "");
+
+                const credenciadoRow =
+                    String(row[14] || "");
+
+                const gtRow =
+                    String(row[11] || "");
+
+
+                const correspondeBusca =
+                    !busca ||
+                    id.includes(busca) ||
+                    nome.includes(busca) ||
+                    email.includes(busca) ||
+                    instituicao.includes(busca);
+
+
+                const correspondeStatus =
+                    !status ||
+                    statusRow === status;
+
+
+                const correspondeCredenciado =
+                    !credenciado ||
+                    credenciadoRow === credenciado;
+
+
+                const correspondeGT =
+                    !gt ||
+                    gtRow === gt;
+
+
+                return (
+                    correspondeBusca &&
+                    correspondeStatus &&
+                    correspondeCredenciado &&
+                    correspondeGT
+                );
+
+            }
+        );
+
+
+    renderizarInscricoes(
+        filtradas
+    );
+
+}
+
+
+/* =====================================================
+   RENDERIZAR INSCRIÇÕES
+===================================================== */
+
+function renderizarInscricoes(
+    rows
+) {
+
+    resultsCount.textContent =
+        rows.length +
+        " inscrição(ões) encontrada(s).";
+
+
+    if (
+        rows.length === 0
+    ) {
+
+        inscricoesBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="14"
+                    class="admin-loading">
+
+                    Nenhuma inscrição corresponde
+                    aos filtros selecionados.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    inscricoesBody.innerHTML =
+        rows
+        .map(
+            criarLinhaInscricao
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   CRIAR LINHA DA INSCRIÇÃO
+===================================================== */
+
+function criarLinhaInscricao(
+    row
+) {
 
     const id =
         row[0] || "";
@@ -1094,11 +1484,20 @@ function criarLinhaInscricao(row) {
     const email =
         row[3] || "";
 
+    const telefone =
+        row[4] || "";
+
     const instituicao =
         row[5] || "";
 
+    const serie =
+        row[6] || "";
+
     const municipio =
         row[7] || "";
+
+    const possuiGremio =
+        row[8] || "";
 
     const gremio =
         row[9] || "";
@@ -1108,6 +1507,9 @@ function criarLinhaInscricao(row) {
 
     const gt =
         row[11] || "";
+
+    const observacoes =
+        row[12] || "";
 
     const status =
         row[13] || "Pendente";
@@ -1121,40 +1523,85 @@ function criarLinhaInscricao(row) {
         <tr>
 
             <td>
-                ${escaparHTML(id)}
+
+                <strong>
+                    ${escaparHTML(id)}
+                </strong>
+
             </td>
+
 
             <td>
                 ${escaparHTML(data)}
             </td>
 
+
             <td>
+
                 ${escaparHTML(nome)}
+
             </td>
 
+
             <td>
+
                 ${escaparHTML(email)}
+
             </td>
 
+
             <td>
+
+                ${escaparHTML(telefone)}
+
+            </td>
+
+
+            <td>
+
                 ${escaparHTML(instituicao)}
+
             </td>
 
+
             <td>
+
+                ${escaparHTML(serie)}
+
+            </td>
+
+
+            <td>
+
                 ${escaparHTML(municipio)}
+
             </td>
 
-            <td>
-                ${escaparHTML(gremio)}
-            </td>
 
             <td>
+
+                ${
+                    gremio
+                    ? escaparHTML(gremio)
+                    : escaparHTML(possuiGremio)
+                }
+
+            </td>
+
+
+            <td>
+
                 ${escaparHTML(condicao)}
+
             </td>
 
+
             <td>
+
                 ${escaparHTML(gt)}
+
             </td>
+
 
             <td>
 
@@ -1190,6 +1637,7 @@ function criarLinhaInscricao(row) {
 
             </td>
 
+
             <td>
 
                 <label class="admin-check">
@@ -1206,6 +1654,7 @@ function criarLinhaInscricao(row) {
 
             </td>
 
+
             <td>
 
                 <button
@@ -1214,6 +1663,15 @@ function criarLinhaInscricao(row) {
                     data-id="${escaparHTML(id)}">
 
                     Salvar
+
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-secondary admin-details"
+                    data-id="${escaparHTML(id)}">
+
+                    Detalhes
 
                 </button>
 
@@ -1227,7 +1685,7 @@ function criarLinhaInscricao(row) {
 
 
 /* =====================================================
-   SALVAR ALTERAÇÃO
+   SALVAR INSCRIÇÃO
 ===================================================== */
 
 document.addEventListener(
@@ -1285,11 +1743,15 @@ document.addEventListener(
                 await fetch(
                     API_URL,
                     {
-                        method: "POST",
+
+                        method:
+                            "POST",
 
                         headers: {
+
                             "Content-Type":
-                            "text/plain;charset=utf-8"
+                                "text/plain;charset=utf-8"
+
                         },
 
                         body:
@@ -1326,7 +1788,8 @@ document.addEventListener(
             if (!resultado.ok) {
 
                 throw new Error(
-                    resultado.error
+                    resultado.error ||
+                    "Erro ao salvar."
                 );
 
             }
@@ -1337,15 +1800,18 @@ document.addEventListener(
 
 
             adminMessage.textContent =
-                "Inscrição atualizada com sucesso.";
+                "Inscrição " +
+                id +
+                " atualizada com sucesso.";
 
 
-            await carregarEstatisticas();
+            await carregarDados();
 
 
         } catch (erro) {
 
             console.error(
+                "Erro ao salvar:",
                 erro
             );
 
@@ -1356,7 +1822,7 @@ document.addEventListener(
 
             adminMessage.textContent =
                 erro.message ||
-                "Não foi possível atualizar.";
+                "Não foi possível salvar.";
 
         }
 
@@ -1369,6 +1835,122 @@ document.addEventListener(
             "Salvar";
 
     }
+);
+
+
+/*
+
+    =====================================================
+   DETALHES
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const botao =
+            event.target.closest(
+                ".admin-details"
+            );
+
+
+        if (!botao) {
+
+            return;
+
+        }
+
+
+        const id =
+            botao.dataset.id;
+
+
+        const inscricao =
+            inscricoes.find(
+                function(row) {
+
+                    return String(row[0]) ===
+                        String(id);
+
+                }
+            );
+
+
+        if (!inscricao) {
+
+            return;
+
+        }
+
+
+        const detalhes = `
+
+            ID: ${inscricao[0] || "-"}
+
+            Data/Hora: ${inscricao[1] || "-"}
+
+            Nome: ${inscricao[2] || "-"}
+
+            E-mail: ${inscricao[3] || "-"}
+
+            WhatsApp: ${inscricao[4] || "-"}
+
+            Instituição: ${inscricao[5] || "-"}
+
+            Série/Curso: ${inscricao[6] || "-"}
+
+            Município: ${inscricao[7] || "-"}
+
+            Possui Grêmio: ${inscricao[8] || "-"}
+
+            Grêmio: ${inscricao[9] || "-"}
+
+            Condição: ${inscricao[10] || "-"}
+
+            GT: ${inscricao[11] || "-"}
+
+            Observações: ${inscricao[12] || "-"}
+
+            Status: ${inscricao[13] || "-"}
+
+            Credenciado: ${inscricao[14] || "-"}
+
+        `;
+
+
+        alert(
+            detalhes
+        );
+
+    }
+);
+
+
+/* =====================================================
+   FILTROS EM TEMPO REAL
+===================================================== */
+
+searchInput.addEventListener(
+    "input",
+    aplicarFiltros
+);
+
+
+statusFilter.addEventListener(
+    "change",
+    aplicarFiltros
+);
+
+
+credenciadoFilter.addEventListener(
+    "change",
+    aplicarFiltros
+);
+
+
+gtFilter.addEventListener(
+    "change",
+    aplicarFiltros
 );
 
 
@@ -1394,7 +1976,8 @@ async function carregarGremios() {
         if (!dados.ok) {
 
             throw new Error(
-                dados.error
+                dados.error ||
+                "Erro ao carregar Grêmios."
             );
 
         }
@@ -1413,12 +1996,12 @@ async function carregarGremios() {
                 <div class="empty-state">
 
                     <h3>
-                        Nenhum Grêmio ativo
+                        Nenhum Grêmio cadastrado
                     </h3>
 
                     <p>
-                        Não existem Grêmios
-                        ativos cadastrados.
+                        Ainda não existem Grêmios
+                        ativos no sistema.
                     </p>
 
                 </div>
@@ -1440,12 +2023,23 @@ async function carregarGremios() {
                         <article class="gremio-card">
 
                             <span class="gremio-status">
-                                Ativo
+
+                                ${escaparHTML(
+                                    gremio.status ||
+                                    "Ativo"
+                                )}
+
                             </span>
 
+
                             <h3>
-                                ${escaparHTML(gremio.nome)}
+
+                                ${escaparHTML(
+                                    gremio.nome
+                                )}
+
                             </h3>
+
 
                             <p>
 
@@ -1453,9 +2047,12 @@ async function carregarGremios() {
                                     Escola:
                                 </strong>
 
-                                ${escaparHTML(gremio.escola)}
+                                ${escaparHTML(
+                                    gremio.escola
+                                )}
 
                             </p>
+
 
                             <p>
 
@@ -1463,9 +2060,12 @@ async function carregarGremios() {
                                     Município:
                                 </strong>
 
-                                ${escaparHTML(gremio.municipio)}
+                                ${escaparHTML(
+                                    gremio.municipio
+                                )}
 
                             </p>
+
 
                             <p>
 
@@ -1473,9 +2073,39 @@ async function carregarGremios() {
                                     Presidência:
                                 </strong>
 
-                                ${escaparHTML(gremio.presidente)}
+                                ${escaparHTML(
+                                    gremio.presidente
+                                )}
 
                             </p>
+
+
+                            ${
+                                gremio.instagram &&
+                                gremio.instagram !== "-"
+                                ?
+
+                                `
+
+                                <p>
+
+                                    <strong>
+                                        Instagram:
+                                    </strong>
+
+                                    ${escaparHTML(
+                                        gremio.instagram
+                                    )}
+
+                                </p>
+
+                                `
+
+                                :
+
+                                ""
+
+                            }
 
                         </article>
 
@@ -1489,7 +2119,7 @@ async function carregarGremios() {
     } catch (erro) {
 
         console.error(
-            "Erro ao carregar Grêmios:",
+            "Erro nos Grêmios:",
             erro
         );
 
@@ -1499,12 +2129,14 @@ async function carregarGremios() {
             <div class="empty-state">
 
                 <h3>
-                    Erro ao carregar Grêmios
+                    Não foi possível carregar os Grêmios
                 </h3>
 
                 <p>
-                    Não foi possível consultar
-                    os dados neste momento.
+
+                    Verifique a conexão com
+                    a API e tente novamente.
+
                 </p>
 
             </div>
@@ -1523,6 +2155,13 @@ async function carregarGremios() {
 refreshButton.addEventListener(
     "click",
     function() {
+
+        adminMessage.className =
+            "form-message";
+
+        adminMessage.textContent =
+            "Atualizando dados...";
+
 
         carregarDados();
 
