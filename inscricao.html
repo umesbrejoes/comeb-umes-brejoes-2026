@@ -866,10 +866,6 @@ formulario.addEventListener(
         event.preventDefault();
 
 
-        /*
-         * Desabilita o botão durante o envio
-         */
-
         botao.disabled = true;
 
         botao.textContent = "Enviando...";
@@ -883,11 +879,7 @@ formulario.addEventListener(
 
 
         /*
-         * Dados enviados para o Apps Script
-         *
-         * Os nomes abaixo correspondem
-         * exatamente aos campos esperados
-         * pelo Code.gs.
+         * Dados enviados para o Apps Script.
          */
 
         const dados = {
@@ -945,7 +937,8 @@ formulario.addEventListener(
                 document
                 .getElementById("condicao")
                 .value,
-gt:
+
+            gt:
                 document
                 .getElementById("gt")
                 .value,
@@ -961,7 +954,7 @@ gt:
 
 
         /*
-         * Envio para o Google Apps Script
+         * Envia os dados para o Google Apps Script.
          */
 
         try {
@@ -983,77 +976,54 @@ gt:
                 );
 
 
-            /*
-             * Converte a resposta
-             * para JSON.
-             */
-
             const resultado =
                 await resposta.json();
 
 
 
             /*
-             * SUCESSO
+             * INSCRIÇÃO REGISTRADA
              */
 
             if (resultado.ok) {
 
 
-                mensagem.className =
-                    "form-message success";
+                /*
+                 * Guarda o número da inscrição
+                 * para a página de confirmação.
+                 */
 
-
-                mensagem.innerHTML = `
-
-                    <strong>
-                        Inscrição enviada com sucesso!
-                    </strong>
-
-                    <p>
-                        Seu cadastro foi registrado
-                        pela organização do COMEB 2026.
-                    </p>
-
-                    <p>
-                        <strong>
-                            Número da inscrição:
-                            ${resultado.id || "Registrado"}
-                        </strong>
-                    </p>
-
-                `;
-
-
-                formulario.reset();
+                sessionStorage.setItem(
+                    "comebRegistrationId",
+                    resultado.id || ""
+                );
 
 
                 /*
-                 * Mantém Brejões como município
+                 * Redireciona para a confirmação.
                  */
 
-                document
-                    .getElementById("municipio")
-                    .value = "Brejões";
+                window.location.href =
+                    "confirmacao.html";
 
+
+                return;
 
             }
+
 
             /*
              * ERRO RETORNADO PELA API
              */
 
-            else {
-
-                throw new Error(
-                    resultado.error ||
-                    "A API não conseguiu registrar a inscrição."
-                );
-
-            }
+            throw new Error(
+                resultado.error ||
+                "A API não conseguiu registrar a inscrição."
+            );
 
 
         }
+
 
         /*
          * ERRO DE COMUNICAÇÃO
@@ -1092,7 +1062,7 @@ gt:
 
 
         /*
-         * Reativa o botão
+         * Reativa o botão caso ocorra erro.
          */
 
         finally {
