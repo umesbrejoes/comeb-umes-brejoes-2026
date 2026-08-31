@@ -1652,3 +1652,289 @@ a {
     }
 
 }
+
+/* =========================
+   INSCRIÇÃO
+========================= */
+
+.registration-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.registration-info {
+    position: sticky;
+    top: 30px;
+}
+
+.registration-info h2 {
+    margin-top: 12px;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.1;
+}
+
+.registration-info > p {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+.registration-detail {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.registration-detail:first-of-type {
+    margin-top: 25px;
+    border-top: 2px solid var(--green);
+}
+
+.registration-detail span {
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.registration-detail strong {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+.registration-warning {
+    margin-top: 25px;
+    padding: 20px;
+    background: #edf7f0;
+    border-left: 3px solid var(--green);
+}
+
+.registration-warning strong {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.registration-warning p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.registration-form-box {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 40px;
+}
+
+.form-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-header h2 {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.form-header p {
+    margin-top: 5px;
+    color: var(--muted);
+}
+
+
+#inscricaoForm {
+    padding-top: 25px;
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #cfd8d2;
+    background: white;
+    padding: 13px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--green);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.form-check input {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--green);
+}
+
+.form-check label {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.form-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+.form-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 13px;
+}
+
+.form-message.success {
+    display: block;
+    background: #edf7f0;
+    border-left: 3px solid var(--green);
+}
+
+.form-message strong {
+    color: var(--green);
+}
+
+.form-message p {
+    margin-top: 5px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   ETAPAS
+========================= */
+
+.registration-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.registration-step {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 30px;
+    min-height: 200px;
+}
+
+.registration-step strong {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.registration-step h3 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.registration-step p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .registration-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .registration-info {
+        position: static;
+    }
+
+    .registration-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .registration-form-box {
+        padding: 25px 20px;
+    }
+
+    .registration-steps {
+        grid-template-columns: 1fr;
+    }
+
+}
