@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Painel administrativo do COMEB 2026 — UMES BREJÕES.">
+
+    <title>Administração | COMEB 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-symbol">
+                C
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    COMEB
+                </strong>
+
+                <span>
+                    UMES BREJÕES
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuToggle"
+            aria-label="Abrir menu">
+
+            ☰
+
+        </button>
+
+
+        <nav class="navigation" id="nav">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="sobre.html">
+                O COMEB
+            </a>
+
+            <a href="programacao.html">
+                Programação
+            </a>
+
+            <a href="gts.html">
+                GTs
+            </a>
+
+            <a href="documentos.html">
+                Documentos
+            </a>
+
+            <a href="gremios.html">
+                Grêmios
+            </a>
+
+            <a href="inscricao.html">
+                Inscrição
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     CABEÇALHO DO PAINEL
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span class="section-tag">
+            COMEB 2026
+        </span>
+
+        <h1>
+            Painel Administrativo
+        </h1>
+
+        <p>
+
+            Área de organização e acompanhamento
+            do Conselho Municipal de Entidades de Base.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AUTENTICAÇÃO
+===================================================== -->
+
+<section
+    class="section"
+    id="loginSection">
+
+    <div class="container">
+
+        <div class="admin-login">
+
+            <span class="section-tag">
+                ACESSO RESTRITO
+            </span>
+
+            <h2>
+                Acesso administrativo
+            </h2>
+
+            <p>
+
+                Informe o token administrativo
+                fornecido pela organização do COMEB.
+
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="adminToken">
+                        Token administrativo
+                    </label>
+
+                    <input
+                        type="password"
+                        id="adminToken"
+                        placeholder="Digite o token"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button">
+
+                    Entrar no painel
+
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="form-message"
+                    role="alert">
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAINEL
+===================================================== -->
+
+<section
+    class="section"
+    id="adminPanel"
+    style="display:none;">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             TOPO DO PAINEL
+        ================================================= -->
+
+        <div class="admin-panel-header">
+
+            <div>
+
+                <span class="section-tag">
+                    ADMINISTRAÇÃO
+                </span>
+
+                <h2>
+                    Gestão do COMEB
+                </h2>
+
+                <p>
+                    Acompanhe as inscrições e o
+                    credenciamento dos participantes.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="button button-secondary"
+                id="logoutButton">
+
+                Sair
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ESTATÍSTICAS
+        ================================================= -->
+
+        <div class="admin-stats">
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="statTotal">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Pendentes
+                </span>
+
+                <strong id="statPending">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Confirmadas
+                </span>
+
+                <strong id="statApproved">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Canceladas
+                </span>
+
+                <strong id="statRejected">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Credenciados
+                </span>
+
+                <strong id="statChecked">
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INSCRIÇÕES
+        ================================================= -->
+
+        <div class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        PARTICIPANTES
+                    </span>
+
+                    <h2>
+                        Inscrições
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="button"
+                    id="refreshButton">
+
+                    Atualizar
+
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="adminMessage"
+                class="form-message">
+
+            </div>
+
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Data/Hora
+                            </th>
+
+                            <th>
+                                Nome
+                            </th>
+
+                            <th>
+                                E-mail
+                            </th>
+
+                            <th>
+                                Instituição
+                            </th>
+
+                            <th>
+                                Município
+                            </th>
+
+                            <th>
+                                Grêmio
+                            </th>
+
+                            <th>
+                                Condição
+                            </th>
+
+                            <th>
+                                GT
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Credenciado
+                            </th>
+
+                            <th>
+                                Ação
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="inscricoesBody">
+
+                        <tr>
+
+                            <td
+                                colspan="12"
+                                class="admin-loading">
+
+                                Faça login para carregar
+                                as inscrições.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GRÊMIOS
+        ================================================= -->
+
+        <div class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        ORGANIZAÇÃO DE BASE
+                    </span>
+
+                    <h2>
+                        Grêmios cadastrados
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="adminGremios"
+                class="gremios-list">
+
+                <div class="empty-state">
+
+                    <h3>
+                        Carregando...
+                    </h3>
+
+                </div>
+
+            </div>
+
+                  </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-main">
+
+
+        <div>
+
+            <div class="footer-brand">
+
+                <strong>
+                    COMEB 2026
+                </strong>
+
+                <span>
+                    UMES BREJÕES
+                </span>
+
+            </div>
+
+            <p>
+                Conselho Municipal de Entidades
+                de Base.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                COMEB
+            </h3>
+
+            <a href="sobre.html">
+                O COMEB
+            </a>
+
+            <a href="programacao.html">
+                Programação
+            </a>
+
+            <a href="gts.html">
+                Grupos de Trabalho
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                PARTICIPAÇÃO
+            </h3>
+
+            <a href="gremios.html">
+                Grêmios
+            </a>
+
+            <a href="inscricao.html">
+                Inscrição
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                DOCUMENTOS
+            </h3>
+
+            <a href="documentos.html">
+                Documentação oficial
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 UMES BREJÕES.
+            </p>
+
+            <span>
+                COMEB 2026
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPT GERAL
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+
+<!-- =====================================================
+     SISTEMA ADMINISTRATIVO
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   CONFIGURAÇÃO
+===================================================== */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const loginSection =
+document.getElementById("loginSection");
+
+const adminPanel =
+document.getElementById("adminPanel");
+
+const loginForm =
+document.getElementById("loginForm");
+
+const loginMessage =
+document.getElementById("loginMessage");
+
+const adminTokenInput =
+document.getElementById("adminToken");
+
+const logoutButton =
+document.getElementById("logoutButton");
+
+const refreshButton =
+document.getElementById("refreshButton");
+
+const inscricoesBody =
+document.getElementById("inscricoesBody");
+
+const adminMessage =
+document.getElementById("adminMessage");
+
+const adminGremios =
+document.getElementById("adminGremios");
+
+
+/* =====================================================
+   ESTADO
+===================================================== */
+
+let adminToken =
+sessionStorage.getItem(
+    "COMEB_ADMIN_TOKEN"
+);
+
+
+/* =====================================================
+   ESCAPAR HTML
+===================================================== */
+
+function escaparHTML(texto) {
+
+    return String(
+        texto || ""
+    )
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   MOSTRAR PAINEL
+===================================================== */
+
+function mostrarPainel() {
+
+    loginSection.style.display =
+        "none";
+
+    adminPanel.style.display =
+        "block";
+
+    carregarDados();
+
+}
+
+
+/* =====================================================
+   MOSTRAR LOGIN
+===================================================== */
+
+function mostrarLogin() {
+
+    loginSection.style.display =
+        "block";
+
+    adminPanel.style.display =
+        "none";
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+loginForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const token =
+            adminTokenInput.value.trim();
+
+
+        if (!token) {
+
+            return;
+
+        }
+
+
+        loginMessage.className =
+            "form-message";
+
+        loginMessage.innerHTML =
+            "Verificando acesso...";
+
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API_URL +
+                    "?action=adminStats&token=" +
+                    encodeURIComponent(token)
+                );
+
+
+            const resultado =
+                await resposta.json();
+
+
+            if (
+                !resultado.ok
+            ) {
+
+                throw new Error(
+                    resultado.error ||
+                    "Token inválido."
+                );
+
+            }
+
+
+            adminToken =
+                token;
+
+
+            sessionStorage.setItem(
+                "COMEB_ADMIN_TOKEN",
+                token
+            );
+
+
+            loginMessage.className =
+                "form-message success";
+
+
+            loginMessage.innerHTML =
+                "Acesso autorizado.";
+
+
+            mostrarPainel();
+
+
+        } catch (erro) {
+
+            console.error(erro);
+
+
+            loginMessage.className =
+                "form-message error";
+
+
+            loginMessage.innerHTML = `
+
+                <strong>
+                    Não foi possível entrar.
+                </strong>
+
+                <p>
+                    Verifique o token administrativo.
+                </p>
+
+            `;
+
+        }
+
+    }
+);
+
+
+/*
+
+  =====================================================
+   SAIR
+===================================================== */
+
+logoutButton.addEventListener(
+    "click",
+    function() {
+
+        sessionStorage.removeItem(
+            "COMEB_ADMIN_TOKEN"
+        );
+
+
+        adminToken = "";
+
+
+        adminTokenInput.value =
+            "";
+
+
+        mostrarLogin();
+
+    }
+);
+
+
+/* =====================================================
+   CARREGAR DADOS
+===================================================== */
+
+async function carregarDados() {
+
+    if (!adminToken) {
+
+        mostrarLogin();
+
+        return;
+
+    }
+
+
+    await Promise.all([
+
+        carregarEstatisticas(),
+
+        carregarInscricoes(),
+
+        carregarGremios()
+
+    ]);
+
+}
+
+
+/* =====================================================
+   ESTATÍSTICAS
+===================================================== */
+
+async function carregarEstatisticas() {
+
+    try {
+
+        const resposta =
+            await fetch(
+                API_URL +
+                "?action=adminStats&token=" +
+                encodeURIComponent(adminToken)
+            );
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (!dados.ok) {
+
+            throw new Error(
+                dados.error
+            );
+
+        }
+
+
+        document.getElementById(
+            "statTotal"
+        ).textContent =
+            dados.total;
+
+
+        document.getElementById(
+            "statPending"
+        ).textContent =
+            dados.pending;
+
+
+        document.getElementById(
+            "statApproved"
+        ).textContent =
+            dados.approved;
+
+
+        document.getElementById(
+            "statRejected"
+        ).textContent =
+            dados.rejected;
+
+
+        document.getElementById(
+            "statChecked"
+        ).textContent =
+            dados.checked;
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro nas estatísticas:",
+            erro
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   INSCRIÇÕES
+===================================================== */
+
+async function carregarInscricoes() {
+
+    inscricoesBody.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="12"
+                class="admin-loading">
+
+                Carregando inscrições...
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try {
+
+        const resposta =
+            await fetch(
+                API_URL +
+                "?action=adminList&token=" +
+                encodeURIComponent(adminToken)
+            );
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (!dados.ok) {
+
+            throw new Error(
+                dados.error
+            );
+
+        }
+
+
+        const rows =
+            dados.rows || [];
+
+
+        if (
+            rows.length === 0
+        ) {
+
+            inscricoesBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="12"
+                        class="admin-loading">
+
+                        Nenhuma inscrição encontrada.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        inscricoesBody.innerHTML =
+            rows
+            .map(
+                function(row) {
+
+                    return criarLinhaInscricao(
+                        row
+                    );
+
+                }
+            )
+            .join("");
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro nas inscrições:",
+            erro
+        );
+
+
+        inscricoesBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="12"
+                    class="admin-loading">
+
+                    Não foi possível carregar
+                    as inscrições.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   CRIAR LINHA
+===================================================== */
+
+function criarLinhaInscricao(row) {
+
+    const id =
+        row[0] || "";
+
+    const data =
+        row[1] || "";
+
+    const nome =
+        row[2] || "";
+
+    const email =
+        row[3] || "";
+
+    const instituicao =
+        row[5] || "";
+
+    const municipio =
+        row[7] || "";
+
+    const gremio =
+        row[9] || "";
+
+    const condicao =
+        row[10] || "";
+
+    const gt =
+        row[11] || "";
+
+    const status =
+        row[13] || "Pendente";
+
+    const credenciado =
+        row[14] || "Não";
+
+
+    return `
+
+        <tr>
+
+            <td>
+                ${escaparHTML(id)}
+            </td>
+
+            <td>
+                ${escaparHTML(data)}
+            </td>
+
+            <td>
+                ${escaparHTML(nome)}
+            </td>
+
+            <td>
+                ${escaparHTML(email)}
+            </td>
+
+            <td>
+                ${escaparHTML(instituicao)}
+            </td>
+
+            <td>
+                ${escaparHTML(municipio)}
+            </td>
+
+            <td>
+                ${escaparHTML(gremio)}
+            </td>
+
+            <td>
+                ${escaparHTML(condicao)}
+            </td>
+
+            <td>
+                ${escaparHTML(gt)}
+            </td>
+
+            <td>
+
+                <select
+                    class="admin-status"
+                    data-id="${escaparHTML(id)}">
+
+                    <option
+                        value="Pendente"
+                        ${status === "Pendente" ? "selected" : ""}>
+
+                        Pendente
+
+                    </option>
+
+                    <option
+                        value="Confirmada"
+                        ${status === "Confirmada" ? "selected" : ""}>
+
+                        Confirmada
+
+                    </option>
+
+                    <option
+                        value="Cancelada"
+                        ${status === "Cancelada" ? "selected" : ""}>
+
+                        Cancelada
+
+                    </option>
+
+                </select>
+
+            </td>
+
+            <td>
+
+                <label class="admin-check">
+
+                    <input
+                        type="checkbox"
+                        class="admin-credenciado"
+                        data-id="${escaparHTML(id)}"
+                        ${credenciado === "Sim" ? "checked" : ""}>
+
+                    Sim
+
+                </label>
+
+            </td>
+
+            <td>
+
+                <button
+                    type="button"
+                    class="button admin-save"
+                    data-id="${escaparHTML(id)}">
+
+                    Salvar
+
+                </button>
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+
+
+/* =====================================================
+   SALVAR ALTERAÇÃO
+===================================================== */
+
+document.addEventListener(
+    "click",
+    async function(event) {
+
+        const botao =
+            event.target.closest(
+                ".admin-save"
+            );
+
+
+        if (!botao) {
+
+            return;
+
+        }
+
+
+        const id =
+            botao.dataset.id;
+
+
+        const linha =
+            botao.closest("tr");
+
+
+        const status =
+            linha
+            .querySelector(
+                ".admin-status"
+            )
+            .value;
+
+
+        const credenciado =
+            linha
+            .querySelector(
+                ".admin-credenciado"
+            )
+            .checked;
+
+
+        botao.disabled =
+            true;
+
+
+        botao.textContent =
+            "Salvando...";
+
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API_URL,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                            "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                action:
+                                    "adminUpdate",
+
+                                token:
+                                    adminToken,
+
+                                id:
+                                    id,
+
+                                status:
+                                    status,
+
+                                credenciado:
+                                    credenciado,
+
+                                notas:
+                                    ""
+
+                            })
+
+                    }
+                );
+
+
+            const resultado =
+                await resposta.json();
+
+
+            if (!resultado.ok) {
+
+                throw new Error(
+                    resultado.error
+                );
+
+            }
+
+
+            adminMessage.className =
+                "form-message success";
+
+
+            adminMessage.textContent =
+                "Inscrição atualizada com sucesso.";
+
+
+            await carregarEstatisticas();
+
+
+        } catch (erro) {
+
+            console.error(
+                erro
+            );
+
+
+            adminMessage.className =
+                "form-message error";
+
+
+            adminMessage.textContent =
+                erro.message ||
+                "Não foi possível atualizar.";
+
+        }
+
+
+        botao.disabled =
+            false;
+
+
+        botao.textContent =
+            "Salvar";
+
+    }
+);
+
+
+/* =====================================================
+   CARREGAR GRÊMIOS
+===================================================== */
+
+async function carregarGremios() {
+
+    try {
+
+        const resposta =
+            await fetch(
+                API_URL +
+                "?action=gremios"
+            );
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (!dados.ok) {
+
+            throw new Error(
+                dados.error
+            );
+
+        }
+
+
+        const gremios =
+            dados.gremios || [];
+
+
+        if (
+            gremios.length === 0
+        ) {
+
+            adminGremios.innerHTML = `
+
+                <div class="empty-state">
+
+                    <h3>
+                        Nenhum Grêmio ativo
+                    </h3>
+
+                    <p>
+                        Não existem Grêmios
+                        ativos cadastrados.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        adminGremios.innerHTML =
+            gremios
+            .map(
+                function(gremio) {
+
+                    return `
+
+                        <article class="gremio-card">
+
+                            <span class="gremio-status">
+                                Ativo
+                            </span>
+
+                            <h3>
+                                ${escaparHTML(gremio.nome)}
+                            </h3>
+
+                            <p>
+
+                                <strong>
+                                    Escola:
+                                </strong>
+
+                                ${escaparHTML(gremio.escola)}
+
+                            </p>
+
+                            <p>
+
+                                <strong>
+                                    Município:
+                                </strong>
+
+                                ${escaparHTML(gremio.municipio)}
+
+                            </p>
+
+                            <p>
+
+                                <strong>
+                                    Presidência:
+                                </strong>
+
+                                ${escaparHTML(gremio.presidente)}
+
+                            </p>
+
+                        </article>
+
+                    `;
+
+                }
+            )
+            .join("");
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar Grêmios:",
+            erro
+        );
+
+
+        adminGremios.innerHTML = `
+
+            <div class="empty-state">
+
+                <h3>
+                    Erro ao carregar Grêmios
+                </h3>
+
+                <p>
+                    Não foi possível consultar
+                    os dados neste momento.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   ATUALIZAR
+===================================================== */
+
+refreshButton.addEventListener(
+    "click",
+    function() {
+
+        carregarDados();
+
+    }
+);
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+if (adminToken) {
+
+    mostrarPainel();
+
+} else {
+
+    mostrarLogin();
+
+}
+
+</script>
+
+
+</body>
+
+</html>
