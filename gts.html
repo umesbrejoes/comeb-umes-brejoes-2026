@@ -148,7 +148,7 @@
             </span>
 
             <h2>
-                Seis grupos.
+                Cinco grupos.
                 Muitas pautas.
             </h2>
 
@@ -446,71 +446,6 @@
                 </span>
 
                 <h2>
-                    Juventude, direitos e cidadania
-                </h2>
-
-                <p>
-
-                    Debate sobre os direitos da juventude,
-                    cidadania, democracia e participação
-                    dos estudantes na sociedade.
-
-                </p>
-
-
-                <h3>
-                    Pautas para discussão
-                </h3>
-
-
-                <ul>
-
-                    <li>
-                        Direitos da juventude
-                    </li>
-
-                    <li>
-                        Cidadania
-                    </li>
-
-                    <li>
-                        Democracia e participação
-                    </li>
-
-                    <li>
-                        Direitos estudantis
-                    </li>
-
-                    <li>
-                        Participação social e política
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =====================
-             GT 06
-        ====================== -->
-
-        <article class="gt-full-card">
-
-            <div class="gt-full-number">
-                06
-            </div>
-
-
-            <div class="gt-full-content">
-
-                <span>
-                    GT 06
-                </span>
-
-                <h2>
                     Universidade, formação e futuro
                 </h2>
 
@@ -602,7 +537,7 @@
                 <p>
 
                     Os participantes serão distribuídos
-                    entre os seis Grupos de Trabalho.
+                    entre os cinco Grupos de Trabalho.
 
                 </p>
 
@@ -831,6 +766,41 @@
 
 
 <script src="script.js"></script>
+<script>
+const COMEB_API_URL = "https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
+
+async function atualizarVagasGTs() {
+    const elementos = document.querySelectorAll(".gt-vagas[data-gt]");
+    if (!elementos.length) return;
+    try {
+        const resposta = await fetch(COMEB_API_URL + "?action=gtStats", { cache: "no-store" });
+        const dados = await resposta.json();
+        const lista = dados.gts || dados.data || dados.estatisticas || [];
+        const mapa = {};
+        if (Array.isArray(lista)) {
+            lista.forEach(item => {
+                const nome = item.gt || item.id || item.nome || item.codigo;
+                if (nome) mapa[nome] = item;
+            });
+        } else if (lista && typeof lista === "object") {
+            Object.assign(mapa, lista);
+        }
+        elementos.forEach(el => {
+            const item = mapa[el.dataset.gt];
+            if (!item) { el.textContent = "20 vagas por GT"; return; }
+            const ocupadas = Number(item.ocupadas ?? item.inscritos ?? item.total ?? 0);
+            const limite = Number(item.limite ?? item.vagas ?? 20);
+            const disponiveis = Math.max(0, limite - ocupadas);
+            el.textContent = `${disponiveis} vaga${disponiveis === 1 ? "" : "s"} disponível${disponiveis === 1 ? "" : "eis"} de ${limite}`;
+        });
+    } catch (erro) {
+        elementos.forEach(el => el.textContent = "20 vagas por GT");
+        console.warn("Não foi possível atualizar as vagas dos GTs.", erro);
+    }
+}
+
+atualizarVagasGTs();
+</script>
 
 </body>
 

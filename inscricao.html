@@ -470,6 +470,8 @@
                             Grupo de Trabalho de interesse
                         </label>
 
+                        <small class="form-help">Cada GT possui 20 vagas. A disponibilidade é controlada pelo sistema.</small>
+
                         <select
                             id="gt"
                             name="gt">
@@ -478,28 +480,24 @@
                                 Ainda não definido
                             </option>
 
-                            <option value="GT 1 — Educação e qualidade do ensino">
-                                GT 1 — Educação e qualidade do ensino
+                            <option value="GT1-Educação e qualidade do ensino">
+                                GT 01 — Educação e qualidade do ensino
                             </option>
 
-                            <option value="GT 2 — Assistência e permanência estudantil">
-                                GT 2 — Assistência e permanência estudantil
+                            <option value="GT2-Assistência e permanência estudantil">
+                                GT 02 — Assistência e permanência estudantil
                             </option>
 
-                            <option value="GT 3 — Grêmios Estudantis e organização de base">
-                                GT 3 — Grêmios Estudantis e organização de base
+                            <option value="GT3-Grêmios Estudantis e organização">
+                                GT 03 — Grêmios Estudantis e organização
                             </option>
 
-                            <option value="GT 4 — Cultura, esporte e lazer">
-                                GT 4 — Cultura, esporte e lazer
+                            <option value="GT4-Cultura, esporte e lazer">
+                                GT 04 — Cultura, esporte e lazer
                             </option>
 
-                            <option value="GT 5 — Juventude, direitos e cidadania">
-                                GT 5 — Juventude, direitos e cidadania
-                            </option>
-
-                            <option value="GT 6 — Universidade, formação profissional e futuro">
-                                GT 6 — Universidade, formação profissional e futuro
+                            <option value="GT5-Universidade, formação e futuro">
+                                GT 05 — Universidade, formação e futuro
                             </option>
 
                         </select>
@@ -833,6 +831,36 @@
 ========================= -->
 
 <script src="script.js"></script>
+<script>
+const COMEB_GT_API_URL = "https://script.google.com/macros/s/AKfycbxwdNBBD9ULf9h_oUUf9TYodGIPuMBmC7GsxIyVb9dHppiAvBLOu7aicie910Ca4xIv/exec";
+
+async function atualizarOpcoesGT() {
+    const select = document.getElementById("gt");
+    if (!select) return;
+    try {
+        const resposta = await fetch(COMEB_GT_API_URL + "?action=gtStats", { cache: "no-store" });
+        const dados = await resposta.json();
+        const lista = dados.gts || dados.data || dados.estatisticas || [];
+        const mapa = {};
+        if (Array.isArray(lista)) lista.forEach(item => { const k=item.gt||item.id||item.nome||item.codigo; if(k) mapa[k]=item; });
+        select.querySelectorAll("option[data-gt]").forEach(opt => {
+            const item = mapa[opt.value];
+            if (!item) return;
+            const ocupadas = Number(item.ocupadas ?? item.inscritos ?? item.total ?? 0);
+            const limite = Number(item.limite ?? item.vagas ?? 20);
+            if (ocupadas >= limite) {
+                opt.disabled = true;
+                opt.textContent += " — lotado";
+            }
+        });
+    } catch (erro) {
+        console.warn("Não foi possível consultar a disponibilidade dos GTs.", erro);
+    }
+}
+
+document.querySelectorAll("#gt option:not([value=''])").forEach(o => o.dataset.gt = o.value);
+atualizarOpcoesGT();
+</script>
 
 
 
